@@ -1,0 +1,14 @@
+.experience {
+  height: 100vh;
+  background-color: beige;
+
+  &__timeline {
+    display: block;
+    height: 80%;
+  }
+
+  &__tech {
+    display: block;
+    height: 20%;
+  }
+}

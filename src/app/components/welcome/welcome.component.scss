@@ -1,0 +1,22 @@
+.welcome {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+   
+  background-image: url("/assets/informatyk-2.jpg");
+  background-size: cover;
+  background-position: top;
+
+  color: white;
+
+  &__header {
+    font-size: 5rem;
+  }
+
+  &__sub-header {
+    font-size: 2rem;
+  }
+}

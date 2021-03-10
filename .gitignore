@@ -44,3 +44,15 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/assets/angular-logo.png
+src/assets/cycling-1.jpg
+src/assets/cycling-2.jpg
+src/assets/informatyk-1.jpg
+src/assets/informatyk-2.jpg
+src/assets/project-1.png
+.gitignore
+src/assets/vue-logo.png
+src/assets/violin-2.jpg
+src/assets/violin-1.jpg
+src/assets/sass-logo.png
+src/assets/js-logo.png

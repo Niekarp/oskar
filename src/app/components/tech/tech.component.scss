@@ -1,0 +1,13 @@
+.tech {
+  height: 100%;
+  border: 1px solid black;
+  border-bottom: none;
+  border-radius: 2rem;
+
+  &__logo {
+    width: 25%;
+    max-height: 100%;
+    border-style: none;
+  }
+}
+ 
