@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  public elRef: ElementRef;
 
-  constructor() { }
+  constructor(elRef: ElementRef) {
+    this.elRef = elRef;
+  }
 
   ngOnInit(): void {
   }
