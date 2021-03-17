@@ -1,12 +1,12 @@
-<div class="navbar">
-  <div class="navbar__logo">{{ navbarTitle }}</div>
+<div class="navbar" [ngClass]="{ 'navbar--hamburger-open': hamburgerClicked }">
+  <div class="navbar__logo" [@blurUnblur]="navbarTitleBlurred ? 'blur' : 'unblur'" (@blurUnblur.done)="changeDisplayedTitle($event)">{{ navbarTitle }}</div>
   <ul  class="navbar__links">
-    <li>O mnie</li>
-    <li>Doświadczenie</li>
-    <li>Projekty</li>
-    <li>Hobby</li>
+    <li *ngFor="let navItem of config" (click)="navigateTo(navItem.elementTarget)">
+      {{ navItem.navName }}
+    </li>
   </ul>
-  <div class="navbar__hamburger">
+  <div class="navbar__hamburger" (click)="onHamburgerClick()">
+    <div class="navbar__hamburger-stick"></div>
     <div class="navbar__hamburger-stick"></div>
     <div class="navbar__hamburger-stick"></div>
     <div class="navbar__hamburger-stick"></div>

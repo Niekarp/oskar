@@ -1,4 +1,4 @@
-<app-navbar class="navbar-container" [config]="navbarConfig"></app-navbar>
+<app-navbar *ngIf="navbarConfig" class="navbar-container" [config]="navbarConfig"></app-navbar>
 
 <app-welcome    class="full-screen"></app-welcome>
 <app-experience class="full-screen"></app-experience>
