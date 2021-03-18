@@ -1,4 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-welcome',
@@ -6,13 +9,22 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
-  public elRef: ElementRef;
+  // public elRef: ElementRef;
+  private rgb = [70, 10, 50];
+  private colorDirection = [true, true, true];
 
-  constructor(elRef: ElementRef) {
-    this.elRef = elRef;
+  public faGithub = faGithub;
+  public faEnvelope = faEnvelope;
+  public faLinkedin = faLinkedin;
+  public faChevronDown = faChevronDown;
+
+  constructor(public elRef: ElementRef) {
   }
 
   ngOnInit(): void {
   }
 
+  public navigateToSectionBottom() {
+    (this.elRef.nativeElement as HTMLElement).nextElementSibling!.scrollIntoView({block: "center", behavior: "smooth"});
+  }
 }

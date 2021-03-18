@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/co
 import { ExperienceComponent } from './components/experience/experience.component';
 import { HobbyComponent } from './components/hobby/hobby.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { NavItem } from "./components/navbar/navbar.component";
 
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
@@ -15,13 +16,17 @@ export class AppComponent {
   @ViewChild(ExperienceComponent) cmpExperience!: ExperienceComponent;
   @ViewChild(ProjectsComponent) cmpProjects!: ProjectsComponent;
   @ViewChild(HobbyComponent) cmpHobby!: HobbyComponent;
+
+  private pageSections: Array<HTMLElement>;
   
-  public navbarConfig: Array<{ navName: string, offsetTarget: number, elementTarget: HTMLElement }>;
+  public navbarConfig: Array<NavItem>;
 
   constructor(private cd: ChangeDetectorRef) {
   }
 
   ngAfterViewInit() {
+    this.pageSections = [this.cmpWelcome.elRef.nativeElement, this.cmpExperience.elRef.nativeElement, this.cmpProjects.elRef.nativeElement, this.cmpHobby.elRef.nativeElement];
+
     const experienceOffsetTarget = ((this.cmpWelcome.elRef.nativeElement as HTMLElement).clientHeight / 2);
     const projectsOffsetTarget   = ((this.cmpExperience.elRef.nativeElement as HTMLElement).offsetTop) +  
       ((this.cmpExperience.elRef.nativeElement as HTMLElement).clientHeight / 2);
@@ -30,12 +35,24 @@ export class AppComponent {
 
     this.navbarConfig = [];
     this.navbarConfig.push(
-      { navName: "Oskar",        offsetTarget: 0, elementTarget: this.cmpWelcome.elRef.nativeElement },
+      { navName: ":)",           offsetTarget: 0, elementTarget: this.cmpWelcome.elRef.nativeElement },
       { navName: "Doświadzenie", offsetTarget: experienceOffsetTarget, elementTarget: this.cmpExperience.elRef.nativeElement },
       { navName: "Projekty",     offsetTarget: projectsOffsetTarget, elementTarget: this.cmpProjects.elRef.nativeElement },
       { navName: "Hobby",        offsetTarget: hobbyOffsetTarget, elementTarget: this.cmpHobby.elRef.nativeElement }
     );
 
+    this.highlightBackground(this.navbarConfig[0]);
+
     this.cd.detectChanges();
+  }
+
+  public highlightBackground(navItem: NavItem) {
+    this.pageSections.forEach(section => {
+      section.style.backgroundColor = "rgb(23, 54, 81)";
+      (section.firstChild! as HTMLElement).style.filter = "blur(1rem)"; 
+    });
+
+    navItem.elementTarget.style.backgroundColor =  "rgb(72, 153, 223)";
+    (navItem.elementTarget!.firstChild as HTMLElement).style.filter = "blur(0rem)";
   }
 }

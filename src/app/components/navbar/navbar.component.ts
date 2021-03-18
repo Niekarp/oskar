@@ -1,5 +1,11 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
+
+export interface NavItem {
+  navName: string,
+  offsetTarget: number,
+  elementTarget: HTMLElement
+};
 
 @Component({
   selector: 'app-navbar',
@@ -15,9 +21,12 @@ import { trigger, state, style, animate, transition, AnimationEvent } from '@ang
 })
 export class NavbarComponent implements OnInit {
   @Input()
-  public config: Array<{ navName: string, offsetTarget: number, elementTarget: HTMLElement }>;
+  public config: Array<NavItem>;
 
-  public navbarTitle = "Oskar";
+  @Output()
+  public targetReached = new EventEmitter<NavItem>();
+
+  public navbarTitle = ":)";
   public pendingNavbarTitle = "";
   public navbarTitleBlurred = false;
   public hamburgerClicked = false;
@@ -40,6 +49,7 @@ export class NavbarComponent implements OnInit {
     });
 
     if (this.pendingNavbarTitle !== this.navbarTitle) {
+      this.targetReached.emit(this.config.find(item => item.navName === this.pendingNavbarTitle));
       this.navbarTitleBlurred = true;
     }
   }
@@ -58,6 +68,6 @@ export class NavbarComponent implements OnInit {
   public navigateTo(target: HTMLElement) {
     this.hamburgerClicked = false;
     target.scrollIntoView({ behavior: "smooth" });
+    this.targetReached.emit(this.config.find(item => item.navName === this.navbarTitle));
   }
 }
-

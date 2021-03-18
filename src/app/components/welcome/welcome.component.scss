@@ -6,11 +6,12 @@
   justify-content: center;
   flex-direction: column;
    
-  background-image: url("/assets/informatyk-2.jpg");
-  background-size: cover;
-  background-position: top;
+  // background-image: url("/assets/informatyk-2.jpg");
+  // background-size: cover;
+  // background-position: top;
 
   color: white;
+  font-family: monospace;
 
   &__header {
     font-size: 5rem;
@@ -18,5 +19,30 @@
 
   &__sub-header {
     font-size: 2rem;
+  }
+
+  &__nav-arrow {
+    position: absolute;
+    bottom: 0;
+    font-size: 5rem;
+    cursor: pointer;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 100%;
+
+    margin-top: 3rem;
+
+    a {
+      color: white;
+    }
+
+    fa-icon {
+      font-size: 3rem;
+      cursor: pointer;
+    }
   }
 }

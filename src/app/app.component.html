@@ -1,8 +1,8 @@
-<app-navbar *ngIf="navbarConfig" class="navbar-container" [config]="navbarConfig"></app-navbar>
+<app-navbar *ngIf="navbarConfig" class="navbar-container" [config]="navbarConfig" (targetReached)="highlightBackground($event)"></app-navbar>
 
-<app-welcome    class="full-screen"></app-welcome>
-<app-experience class="full-screen"></app-experience>
-<app-projects   class="full-screen"></app-projects>
-<app-hobby      class="full-screen"></app-hobby>
+<app-welcome    class="full-screen section-transition welcome-container"></app-welcome>
+<app-experience class="full-screen section-transition"></app-experience>
+<app-projects   class="full-screen section-transition"></app-projects>
+<app-hobby      class="full-screen section-transition"></app-hobby>
 
 <!-- <router-outlet></router-outlet> -->
