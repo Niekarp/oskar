@@ -1,4 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+export enum Tech {
+  Vue = "vue-logo.png",
+  Angular = "angular-logo.png",
+  React = "react-logo.png",
+  Phaser = "phaser-logo.png"
+};
+
+export interface Project {
+  imgSrc: string,
+  title: string,
+  tech: Tech,
+  desc: string
+};
 
 @Component({
   selector: 'app-project',
@@ -6,8 +20,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
+  @Input()
+  public project: Project;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

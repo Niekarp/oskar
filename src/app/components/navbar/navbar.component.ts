@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
   public pendingNavbarTitle = "";
   public navbarTitleBlurred = false;
   public hamburgerClicked = false;
+  public currentSection: NavItem;
 
   constructor() { }
 
@@ -55,6 +56,15 @@ export class NavbarComponent implements OnInit {
   }
 
   public onHamburgerClick() {
+    if (!this.hamburgerClicked) {
+      window.document.documentElement.style.overflowY = "hidden";
+      this.updateCurrentSection();
+      (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "blur(2rem)"
+    } else {
+      window.document.documentElement.style.overflowY = "unset";
+      (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "unset"
+    }
+
     this.hamburgerClicked = !this.hamburgerClicked;
   }
 
@@ -66,8 +76,21 @@ export class NavbarComponent implements OnInit {
   }
 
   public navigateTo(target: HTMLElement) {
-    this.hamburgerClicked = false;
+    this.onHamburgerClick();
     target.scrollIntoView({ behavior: "smooth" });
     this.targetReached.emit(this.config.find(item => item.navName === this.navbarTitle));
+  }
+
+  private updateCurrentSection() {
+    const currentScroll = window.pageYOffset;
+
+    this.currentSection = this.config[0];
+    this.config.slice().reverse().every(navBreakpoint => { 
+      if (currentScroll > navBreakpoint.offsetTarget) {
+        this.currentSection = navBreakpoint;
+        return false;
+      }
+      return true;
+    }); 
   }
 }
