@@ -10,6 +10,12 @@
 .welcome-container {
 }
 
+.raised {
+  box-shadow: black 0px 0px 20px;
+  // firefox fix
+  transform: translate3d(0px, 0px, 0px);
+}
+
 .section-transition {
   transition: background-color 1s, filter 2s;
 }

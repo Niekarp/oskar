@@ -1,3 +1,10 @@
+:host {
+  background-color: rgb(72, 153, 223);
+}
+:host.off {
+  background-color: rgb(23, 54, 81);
+}
+
 .welcome {
   height: 100vh;
 

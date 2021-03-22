@@ -1,6 +1,9 @@
 <div class="tech">
-  <img class="tech__logo" src="/assets/angular-logo.png" />
-  <img class="tech__logo" src="/assets/sass-logo.png" />
-  <img class="tech__logo" src="/assets/js-logo.png" />
-  <img class="tech__logo" src="/assets/vue-logo.png" />
+  <h2 class="tech__header"> Tech Stack </h2>
+  <div class="tech__logo-container">
+    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 0 }" src="/assets/cpp-logo.svg" />
+    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 50 }" src="/assets/angular-logo.svg" />
+    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 90 }" src="/assets/vuejs-logo.svg" />
+    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 90 }" src="/assets/wordpress-logo.svg" />
+  </div>
 </div>

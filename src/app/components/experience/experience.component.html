@@ -1,4 +1,4 @@
 <div class="experience">
-  <app-timeline class="experience__timeline"></app-timeline>
-  <app-tech class="experience__tech"></app-tech>
+  <app-timeline class="experience__timeline" (progressHappened)="onProgressChange($event)"></app-timeline>
+  <app-tech     class="experience__tech"     [timelineProgress]="timelineProgress"></app-tech>
 </div>

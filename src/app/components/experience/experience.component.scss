@@ -1,14 +1,25 @@
+:host {
+  background-color: #368dd6;
+  background: linear-gradient(90deg, rgba(54,141,214,1) 0%, rgba(40,92,139,1) 100%);
+}
+:host.off {
+  background-color: rgb(23, 54, 81);
+}
+
 .experience {
-  height: 100vh;
+  min-height: 100vh;
   // background-color: beige;
 
   &__timeline {
     display: block;
-    height: 80%;
+    height: 100%;
   }
 
   &__tech {
+    height: 15%;
+    position: sticky;
+    display: scrol;
     display: block;
-    height: 20%;
+    bottom: 0;
   }
 }

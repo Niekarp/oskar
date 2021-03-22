@@ -18,6 +18,7 @@ export class AppComponent {
   @ViewChild(HobbyComponent) cmpHobby!: HobbyComponent;
 
   private pageSections: Array<HTMLElement>;
+  private timelineOn = false;
   
   public navbarConfig: Array<NavItem>;
 
@@ -28,8 +29,9 @@ export class AppComponent {
     this.pageSections = [this.cmpWelcome.elRef.nativeElement, this.cmpExperience.elRef.nativeElement, this.cmpProjects.elRef.nativeElement, this.cmpHobby.elRef.nativeElement];
 
     const experienceOffsetTarget = ((this.cmpWelcome.elRef.nativeElement as HTMLElement).clientHeight / 2);
-    const projectsOffsetTarget   = ((this.cmpExperience.elRef.nativeElement as HTMLElement).offsetTop) +  
-      ((this.cmpExperience.elRef.nativeElement as HTMLElement).clientHeight / 2);
+    const projectsOffsetTarget   = ((this.cmpProjects.elRef.nativeElement as HTMLElement).offsetTop) 
+      - (window.innerHeight / 2);
+    // + ((this.cmpExperience.elRef.nativeElement as HTMLElement).clientHeight / 2);
     const hobbyOffsetTarget = (this.cmpHobby.elRef.nativeElement as HTMLElement).offsetTop - 
       ((this.cmpHobby.elRef.nativeElement as HTMLElement).clientHeight / 2);
 
@@ -48,11 +50,20 @@ export class AppComponent {
 
   public highlightBackground(navItem: NavItem) {
     this.pageSections.forEach(section => {
-      section.style.backgroundColor = "rgb(23, 54, 81)";
+      // section.style.backgroundColor = "rgb(23, 54, 81)";
+      section.classList.add("off");
       (section.firstChild! as HTMLElement).style.filter = "blur(1rem)"; 
     });
 
-    navItem.elementTarget.style.backgroundColor =  "rgb(72, 153, 223)";
+    // navItem.elementTarget.style.backgroundColor =  "rgb(72, 153, 223)";
+    navItem.elementTarget!.classList.remove("off");
     (navItem.elementTarget!.firstChild as HTMLElement).style.filter = "blur(0rem)";
+  }
+
+  public startTimeline(navItem: NavItem) {
+    if (navItem.navName === "Doświadzenie" && !this.timelineOn) {
+      this.timelineOn = true;
+      this.cmpExperience.startTimeline();
+    }
   }
 }

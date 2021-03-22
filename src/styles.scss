@@ -7,9 +7,14 @@
 
 html, body {
   font-size: 10px;
+  color: white;
 }
 
 .full-screen {
   display: block;
   min-height: 100vh;
+}
+
+.visible {
+  opacity: 1 !important;
 }

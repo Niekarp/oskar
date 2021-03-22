@@ -1,16 +1,45 @@
 <div class="timeline">
-  <div class="timeline__line"></div>
-  <div class="timeline__highschool">
-    <ul class="timeline__list">
-      <li>Początek programowania</li>
-      <li>Ułoył kostke rubika</li>
-    </ul>
+  <div class="timeline__line-container">
+    <div class="timeline__line">
+      <div [ngClass]="{ 'visible': progress > 0 }"  class="timeline__date">2011</div>
+      <div [ngClass]="{ 'visible': progress > 20 }" class="timeline__date">2013</div>
+      <div [ngClass]="{ 'visible': progress > 50 }" class="timeline__date">2016</div>
+      <div [ngClass]="{ 'visible': progress > 90 }" class="timeline__date">2020</div>
+    </div>
+    <div class="timeline__line-cover" #lineCover>
+      <div class="timeline__line-date" #lineDate>{{ year !== 0 ? year : "" }}</div>
+    </div>
   </div>
-  <div class="timeline__uni">
-    <ul class="timeline__list">
-      <li>5 miejsce z C++</li>
-      <li>Stypendium</li>
-      <li>Praca inzynierska - binpoll</li>
-    </ul>
+  <div class="timeline__info">
+    <div class="timeline__beginning" [ngClass]="{ 'visible': progress > 0 }" >
+      <ul class="timeline__list">
+        <li>początki programowania</li>
+      </ul>
+    </div> 
+    <div class="timeline__xilo" [ngClass]="{ 'visible': progress > 20 }" >
+      <h2 class="timeline__header">XI Liceum (Białystok)</h2>
+      <ul class="timeline__list">
+        <li>profil mat-fiz</li>
+        <li>matura z informatyki (68%)</li>
+      </ul>
+    </div>
+    <div class="timeline__pb" [ngClass]="{ 'visible': progress > 50 }" >
+      <h2 class="timeline__header">Politechnika Białostocka</h2>
+      <ul class="timeline__list">
+        <li>Nr. 1 w rankingu studentów(2019)</li>
+        <li>Stypendia rektora</li>
+        <li>5 miejsce w kat. C++ (BTI 2016)</li>
+        <li>Praca inzynierska zakończona artykułem naukowym</li>
+        <li>Studia ukończone z oceną bardzo dobrą</li>
+      </ul>
+    </div> 
+    <div class="timeline__finish" [ngClass]="{ 'visible': progress > 90 }" >
+      <h2 class="timeline__header">Freelancer</h2>
+      <ul class="timeline__list">
+        <li>Korepetycje</li>
+        <li>Wordpress</li>
+        <li>Specjalizacja</li>
+      </ul>
+    </div> 
   </div>
 </div>

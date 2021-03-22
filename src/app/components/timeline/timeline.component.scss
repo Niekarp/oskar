@@ -1,24 +1,80 @@
 .timeline {
   display: grid;
-  grid-template-rows:    repeat(2, 1fr);
-  grid-template-columns: 30% 70%;
+  // grid-template-columns: 30% 70%;
+  grid-template-columns: 12% 88%;
 
   height: 100%;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
 
-  &__line {
+  overflow: scroll;
+
+  &__line-container {
+    height: 100rem;
     grid-column: 1;
-    grid-row: 1/3;
-    background-color: gray;
-    margin: 4.5rem;
-    position: relative;  
+    // grid-row: 1/3;
+    // margin: 4.5rem;
+    margin: 2.5rem;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
   }
 
-  &__line::after {
+  &__line {
+    height: 100%;
+    position: relative;  
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(255, 70, 85, 0.96) 30%, #ff483f 47%, #6ae981 54%, #67e47e 85%, #00edff 100%);
+  }
+
+  &__date:nth-child(1) {
+    top: 0%;
+  }
+  &__date:nth-child(2) {
+    top: 20%;
+  }
+  &__date:nth-child(3) {
+    top: 50%;
+  }
+  &__date:nth-child(4) {
+    top: 90%;
+  }
+
+  &__line-cover {
     content: "";
-    background-color: brown;
+    // background-color: brown;
     width: 100%;
-    height: 70%;
+    // height: 70%;
     display: block;
+
+    // background-color: rgb(64, 201, 255);
+    background-color: #00edff;
+
+    height: 100%;
+    // border: ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: all 0.3s linear;
+  }
+
+  &__line-date {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    left: -2rem;
+    font-size: 3rem;
+  }
+
+  &__date {
+    position: absolute;
+    left: -1rem;
+    opacity: 0;
+    font-size: 2rem;
+    transition: opacity 1s;
+    z-index: 800;
   }
 
   &__line::before {
@@ -28,8 +84,8 @@
     display: block;
     width: 100%;
     height: 2rem;
-    background-color: gray;
-    transform: rotateZ(45deg);
+    background-color: #00edff;
+    border-radius: 50%;
   }
 
   &__list {
@@ -37,7 +93,51 @@
   }
 
   &__list:first-of-type {
-    margin-top: 50%;
+    // margin-top: 50%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info > * {
+    transition: opacity 1s;
+    opacity: 0;
+  }
+
+  &__beginning {
+    flex-basis: 20%;
+    flex-shrink: 0;
+  }
+
+  &__xilo {
+    flex-basis: 30%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  &__pb {
+    flex-basis: 40%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  &__finish {
+    flex-basis: 10%;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+
+  &__header {
+    text-align: center;
+    border-bottom: 1px white dotted;
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  &__list {
+    margin: 0;
   }
 }
  

@@ -25,6 +25,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   public navigateToSectionBottom() {
-    (this.elRef.nativeElement as HTMLElement).nextElementSibling!.scrollIntoView({block: "center", behavior: "smooth"});
+    (this.elRef.nativeElement as HTMLElement).nextElementSibling!.scrollIntoView({block: "start", behavior: "smooth"});
   }
 }
