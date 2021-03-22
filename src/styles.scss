@@ -18,3 +18,7 @@ html, body {
 .visible {
   opacity: 1 !important;
 }
+
+.filter-transition {
+  transition: filter 1s;
+}
