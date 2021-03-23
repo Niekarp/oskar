@@ -9,30 +9,28 @@ img {
   overflow: hidden;
   font-size: 4rem;
   text-align: center;
-  color: red;
+  // color: red;
 
-  &__bike {
-    height: 50%;
+  &__music {
     position: relative;
-    padding-top: 30%;
-    background-image: url("/assets/violin-1.jpg");
+    // padding-top: 30%;
+    // background-image: url("/assets/cycling-1.jpg");
+    background-color: #4899df;
+    background-position: center;
     object-fit: cover;
+  }
+
+  &__music-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   &__upper-image {
     position: absolute;
     top:   0;
     right: 0;
-    transform: rotateZ(45deg);
-  }
-
-  &__music {
-    height: 50%;
-    position: relative;
-    padding-top: 30%;
-    background-image: url("/assets/cycling-1.jpg");
-    background-position: center;
-    object-fit: cover;
+    // transform: rotateZ(45deg);
+    opacity: 0.5;
   }
 
   &__lower-image {
@@ -40,5 +38,159 @@ img {
     bottom: 0;
     left:   0;
     transform: rotateZ(-45deg) translateX(-2rem);
+  }
+
+  &__composing-wrapper {
+    text-align: left;
+    height: auto;
+    display: block;
+    margin-top: -1rem;
+    margin-bottom: -0.5rem;
+  }
+
+  &__composing {
+    font-size: 2.5rem;
+    border: 2px solid white;
+    padding: 0.5rem;
+    border-radius: 0 1rem 1rem 0;
+    border-left: 0;
+  }
+
+  &__composing:hover {
+    background-color: #2d5c86; 
+  }
+
+  &__violin-wrapper {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &__violin {
+    font-size: 2.5rem;
+    border: 2px solid white;
+    padding: 0.5rem;
+    border-radius: 1rem 0rem 0rem 1rem;
+    border-right: 0;
+  }
+
+  &__bike {
+    height: 50%;
+    position: relative;
+    // padding-top: 30%;
+    background-image: url("/assets/map.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(35, 69, 99);
+    object-fit: cover;
+    color: #4899df;
+  }
+
+  &__bike-title {
+    color: white;
+    position: relative;
+    text-align: left;
+    padding-left: 2rem;
+  }
+
+  &__bike-fotter {
+    font-size: 2rem;
+    position: absolute;
+    bottom: 0rem;
+    text-align: center;
+    padding: 3rem;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border-radius: 0% 20% 0 0;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 0;
+    border-top: 1rem #4899de dashed;
+  }
+}
+
+.staff {
+  &__row {
+    height: 9rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  &__line {
+    height: 0.3rem;
+    position: relative;
+    background-color: white;
+  }
+
+  &__note {
+    width: 2rem;
+    height: 4.7rem;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  &__note--playing {
+    background-color: rgba(243, 243, 255, 0.5);
+  }
+
+  &__note--quarter-up {
+    background-image: url("/assets/quarter-note-up.png");
+  }
+
+  &__note--quarter-down {
+    background-image: url("/assets/quarter-note-down.png");
+    top: 100%;
+  }
+
+  &__note--half-up {
+    background-image: url("/assets/half-note-up.png");
+  }
+
+  &__note--half-down {
+    background-image: url("/assets/half-note-down.png");
+    top: 100%;
+  }
+
+  &__note--top {
+    bottom: 100%;
+    left: 0;
+    transform: translateY(-1.7rem);
+  }
+
+  &__note--middle {
+    bottom: 100%;
+    left: 0;
+    transform: translateY(-0.9rem);
+  }
+
+  &__note--bottom {
+    bottom: 0%;
+    left: 0;
+  }
+
+  &__note--stem-down {
+    bottom: 0;
+    transform: rotate(-180deg) translateY(-100%);
+  }
+
+  &__cleff {
+    width: 5rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url("/assets/treble-clef.png");
+    background-size: cover;
   }
 }

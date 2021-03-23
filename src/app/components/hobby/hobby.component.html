@@ -1,10 +1,55 @@
 <div class="hobby filter-transition">
-  <div class="hobby__bike">
-    Lubie rowerowac
-    <img class="hobby__upper-image" src="/assets/violin-2.jpg" />
-  </div>
   <div class="hobby__music">
-    robic muzyki i grac je
-    <img class="hobby__lower-image" src="/assets/cycling-2.jpg" />
+    <div class="hobby__music-title">Muzyka</div>
+    <div class="staff__row">
+      <div class="staff__line">
+        <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 20%"></div>
+        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 68%"></div>
+      </div>
+      <div class="staff__line">
+        <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 32%"></div>
+        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 56%"></div>
+        <div class="staff__note staff__note--quarter-down staff__note--middle" style="left: 80%"></div>
+      </div>
+      <div class="staff__line">
+        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 44%"></div>
+      </div>
+      <div class="staff__line">
+      </div>
+      <div class="staff__line"></div>
+      <div class="staff__cleff"></div>
+    </div>
+    <div class="hobby__composing-wrapper">
+      <span class="hobby__composing">Komponuje  <fa-icon [icon]="faPlay" (click)="playMusic()" style="font-size: 2rem;"></fa-icon></span>
+    </div>
+    <div class="staff__row">
+      <div class="staff__line">
+      </div>
+      <div class="staff__line">
+        <div class="staff__note staff__note--half-down staff__note--middle" style="left: 10%"></div>
+        <div class="staff__note staff__note--half-down staff__note--middle" style="left: 85%"></div>
+        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 55%"></div>
+      </div>
+      <div class="staff__line">
+        <div class="staff__note staff__note--half-down staff__note--middle" style="left: 25%"></div>
+        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 40%"></div>
+        <div class="staff__note staff__note--quarter-down staff__note--middle" style="left: 70%"></div>
+      </div>
+      <div class="staff__line"></div>
+      <div class="staff__line"></div>
+    </div>
+    <div class="hobby__violin-wrapper"><span class="hobby__violin">Gram na skrzypcach</span></div>
+    <img class="hobby__upper-image" src="/assets/violin.png" />
+  </div>
+  <div class="hobby__bike">
+    <svg class="hobby__svg" preserveAspectRatio="xMinYMin meet" style="position: absolute;top: 0;width: 100%;left: 0;/*! height: 100%; */z-index: 0;border-top: 1rem #4899de dashed;" viewBox="0 0 500 500">
+      <path style="stroke: none; fill:#4899df;/*! border-top: 1px solid white; */" d="M 1 85 C 148 184 350 0 500 18 L 500 0 L 0 0 Z\"></path>
+    </svg>
+    <!-- <path class="hobby__svg" style="stroke: none; fill:#4899df;/*! border-top: 1px solid white; */" d="M 1 85 C 148 184 350 0 500 18 L 500 0 L 0 0 Z\"></path> -->
+    <div class="hobby__music-title hobby__bike-title">Kolarstwo</div>
+    <div class="hobby__bike-fotter">
+      <div>Lubie jezdzic na dluzsze wycieczki rowerow</div>
+      <div>1000+ km w ciagu ostatniego roku</div>
+    </div>
   </div>
 </div>
