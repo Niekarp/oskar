@@ -5,7 +5,7 @@ img {
 .hobby {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  // height: 100vh;
   overflow: hidden;
   font-size: 4rem;
   text-align: center;
@@ -91,12 +91,13 @@ img {
     position: relative;
     text-align: left;
     padding-left: 2rem;
+    margin-bottom: 22rem;
   }
 
   &__bike-fotter {
     font-size: 2rem;
-    position: absolute;
-    bottom: 0rem;
+    // position: absolute;
+    // bottom: 0rem;
     text-align: center;
     padding: 3rem;
 
