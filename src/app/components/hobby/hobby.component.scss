@@ -5,7 +5,7 @@ img {
 .hobby {
   display: flex;
   flex-direction: column;
-  // height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   font-size: 4rem;
   text-align: center;
@@ -76,11 +76,12 @@ img {
   }
 
   &__bike {
-    height: 50%;
+    flex: 1;
     position: relative;
     background-image: url("/assets/map.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     background-color: rgb(35, 69, 99);
     object-fit: cover;
     color: #4899df;
@@ -96,8 +97,10 @@ img {
 
   &__bike-fotter {
     font-size: 2rem;
-    // position: absolute;
-    // bottom: 0rem;
+    position: absolute;
+    bottom: 0;
+    left:   0;
+    right:  0;
     text-align: center;
     padding: 3rem;
 
@@ -113,6 +116,8 @@ img {
     left: 0;
     z-index: 0;
     border-top: 1rem #4899de dashed;
+    height: 45rem;
+    overflow: hidden;
   }
 }
 
@@ -192,5 +197,45 @@ img {
     top: 0;
     background: url("/assets/treble-clef.png");
     background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hobby {
+    font-size: 5rem;
+
+    &__music-title {
+      margin-top: 5rem;
+    }
+
+    &__composing-wrapper {
+      margin-top: unset;
+      margin-bottom: 0.5rem;
+    }
+
+    &__composing {
+      font-size: 3rem;
+    }
+
+    &__violin {
+      font-size: 3rem;
+    }
+
+    &__violin-wrapper {
+      margin-top: 1rem;
+    }
+    
+    &__bike-title {
+      padding-left: 12rem;
+    }
+
+    &__svg {
+      height: 60rem;
+    }
+
+    &__bike-fotter {
+      font-size: 3rem;
+      border-radius: 20% 20% 00% 0;
+    }
   }
 }
