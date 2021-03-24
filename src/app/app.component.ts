@@ -28,16 +28,16 @@ export class AppComponent {
   ngAfterViewInit() {
     this.pageSections = [this.cmpWelcome.elRef.nativeElement, this.cmpExperience.elRef.nativeElement, this.cmpProjects.elRef.nativeElement, this.cmpHobby.elRef.nativeElement];
 
-    const experienceOffsetTarget = ((this.cmpWelcome.elRef.nativeElement as HTMLElement).clientHeight / 2);
-    const projectsOffsetTarget   = ((this.cmpProjects.elRef.nativeElement as HTMLElement).offsetTop) 
+    const experienceOffsetTarget = () => ((this.cmpWelcome.elRef.nativeElement as HTMLElement).clientHeight / 2);
+    const projectsOffsetTarget   = () => ((this.cmpProjects.elRef.nativeElement as HTMLElement).offsetTop) 
       - (window.innerHeight / 2);
     // + ((this.cmpExperience.elRef.nativeElement as HTMLElement).clientHeight / 2);
-    const hobbyOffsetTarget = (this.cmpHobby.elRef.nativeElement as HTMLElement).offsetTop - 
+    const hobbyOffsetTarget = () => (this.cmpHobby.elRef.nativeElement as HTMLElement).offsetTop - 
       ((this.cmpHobby.elRef.nativeElement as HTMLElement).clientHeight / 2);
 
     this.navbarConfig = [];
     this.navbarConfig.push(
-      { navName: ":)",           offsetTarget: 0, elementTarget: this.cmpWelcome.elRef.nativeElement },
+      { navName: ":)",           offsetTarget: () => 0, elementTarget: this.cmpWelcome.elRef.nativeElement },
       { navName: "Doświadzenie", offsetTarget: experienceOffsetTarget, elementTarget: this.cmpExperience.elRef.nativeElement },
       { navName: "Projekty",     offsetTarget: projectsOffsetTarget, elementTarget: this.cmpProjects.elRef.nativeElement },
       { navName: "Hobby",        offsetTarget: hobbyOffsetTarget, elementTarget: this.cmpHobby.elRef.nativeElement }

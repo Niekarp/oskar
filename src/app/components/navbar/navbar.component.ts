@@ -3,7 +3,7 @@ import { trigger, state, style, animate, transition, AnimationEvent } from '@ang
 
 export interface NavItem {
   navName: string,
-  offsetTarget: number,
+  offsetTarget: () => number,
   elementTarget: HTMLElement
 };
 
@@ -47,7 +47,7 @@ export class NavbarComponent implements OnInit {
     const currentScroll = window.pageYOffset;
     
     this.config.slice().reverse().every(navBreakpoint => { 
-      if (currentScroll > navBreakpoint.offsetTarget) {
+      if (currentScroll > navBreakpoint.offsetTarget()) {
         this.pendingNavbarTitle = navBreakpoint.navName;
         return false;
       }
@@ -94,7 +94,7 @@ export class NavbarComponent implements OnInit {
 
     this.currentSection = this.config[0];
     this.config.slice().reverse().every(navBreakpoint => { 
-      if (currentScroll > navBreakpoint.offsetTarget) {
+      if (currentScroll > navBreakpoint.offsetTarget()) {
         this.currentSection = navBreakpoint;
         return false;
       }
