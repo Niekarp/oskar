@@ -68,11 +68,10 @@ export class HobbyComponent {
       }, cummTime);
     }
 
-    console.log(notes);
+    // console.log(notes);
     
-    console.log(sortedNotesA);
-    console.log(sortedNotesB);
-    
+    // console.log(sortedNotesA);
+    // console.log(sortedNotesB);
   }
 
 }
