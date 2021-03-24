@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
 
 export interface NavItem {
@@ -26,6 +26,9 @@ export class NavbarComponent implements OnInit {
   @Output()
   public targetReached = new EventEmitter<NavItem>();
 
+  @ViewChild("hamburger")
+  public hamburgerRef: ElementRef;
+
   public navbarTitle = ":)";
   public pendingNavbarTitle = "";
   public navbarTitleBlurred = false;
@@ -39,6 +42,8 @@ export class NavbarComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   private updateOnScroll() {
+    this.updateCurrentSection();
+
     const currentScroll = window.pageYOffset;
     
     this.config.slice().reverse().every(navBreakpoint => { 
@@ -76,7 +81,10 @@ export class NavbarComponent implements OnInit {
   }
 
   public navigateTo(target: HTMLElement) {
-    this.onHamburgerClick();
+    if (window.getComputedStyle((this.hamburgerRef.nativeElement as HTMLElement)).display !== "none") {
+      this.onHamburgerClick(); 
+    }
+
     target.scrollIntoView({ behavior: "smooth" });
     this.targetReached.emit(this.config.find(item => item.navName === this.navbarTitle));
   }
@@ -91,6 +99,6 @@ export class NavbarComponent implements OnInit {
         return false;
       }
       return true;
-    }); 
+    });
   }
 }

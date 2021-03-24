@@ -53,3 +53,28 @@
     }
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .welcome {
+    &__header {
+      text-align: center;
+      font-size: 7rem;
+    }   
+
+    &__sub-header {
+      font-size: 3rem;
+    }
+
+    &__icons {
+      padding: 0 15%;
+
+      fa-icon {
+        font-size: 3.5rem;
+      }
+    }
+
+    &__nav-arrow {
+      font-size: 6rem;
+    }
+  }
+}

@@ -93,3 +93,34 @@
     opacity: 0;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .navbar {
+    &__hamburger {
+      display: none;
+    }
+
+    &__links {
+      height: unset;
+      right: unset;
+      bottom: unset;
+      opacity: unset;
+      visibility: unset;
+
+      flex-direction: row;
+      font-size: 2rem;
+    }
+
+    &__links > li {
+      padding-bottom: 0.5rem;
+    }
+
+    &__link--active {
+      border-bottom: 1px solid gold;
+    }
+
+    &__logo {
+      display: none;
+    }
+  }
+}

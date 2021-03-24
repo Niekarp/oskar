@@ -1,11 +1,11 @@
 <div class="navbar" [ngClass]="{ 'navbar--hamburger-open': hamburgerClicked }">
   <div class="navbar__logo" [@blurUnblur]="navbarTitleBlurred ? 'blur' : 'unblur'" (@blurUnblur.done)="changeDisplayedTitle($event)">{{ navbarTitle }}</div>
   <ul  class="navbar__links">
-    <li *ngFor="let navItem of config" (click)="navigateTo(navItem.elementTarget)">
+    <li *ngFor="let navItem of config" (click)="navigateTo(navItem.elementTarget)" [ngClass]="{ 'navbar__link--active': navItem === currentSection }">
       {{ navItem.navName }}
     </li>
   </ul>
-  <div class="navbar__hamburger" (click)="onHamburgerClick()">
+  <div class="navbar__hamburger" (click)="onHamburgerClick()" #hamburger>
     <div class="navbar__hamburger-stick"></div>
     <div class="navbar__hamburger-stick"></div>
     <div class="navbar__hamburger-stick"></div>
