@@ -7,10 +7,8 @@
   padding-top: 5rem;
   padding-bottom: 4rem;
 
-  overflow: scroll;
-
   &__line-container {
-    height: 100rem;
+    height: 130rem;
     grid-column: 1;
     // grid-row: 1/3;
     // margin: 4.5rem;
@@ -24,7 +22,8 @@
   &__line {
     height: 100%;
     position: relative;  
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(255, 70, 85, 0.96) 30%, #ff483f 47%, #6ae981 54%, #67e47e 85%, #00edff 100%);
+    // background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(255, 70, 85, 0.96) 30%, #ff483f 47%, #6ae981 54%, #67e47e 85%, #00edff 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.32) 0%, rgba(185, 50, 157, 0.66) 30%, rgba(198, 63, 236, 0.6) 47%, rgba(106, 233, 129, 0.6) 54%, rgba(103, 228, 126, 0.6) 85%, rgb(0, 237, 255, 0.6) 100%);
   }
 
   &__date:nth-child(1) {
@@ -64,13 +63,13 @@
     position: absolute;
     top: -1rem;
     right: 0;
-    left: -2rem;
+    left: calc(50% - 3rem);
     font-size: 3rem;
   }
 
   &__date {
     position: absolute;
-    left: -1rem;
+    left: calc(50% - 2rem);
     opacity: 0;
     font-size: 2rem;
     transition: opacity 1s;
@@ -80,12 +79,13 @@
   &__line::before {
     content: "";
     position: absolute;
-    bottom: -1rem;
+    bottom: -4rem;
     display: block;
     width: 100%;
-    height: 2rem;
-    background-color: #00edff;
-    border-radius: 50%;
+    height: 4rem;
+    // background-color: #00edff;
+    background-color: rgb(0, 237, 255, 0.6);
+    border-radius: 0% 0% 50% 50%;
   }
 
   &__list {
@@ -133,6 +133,7 @@
     text-align: center;
     border-bottom: 1px white dotted;
     font-size: 2rem;
+    color: #ffff90;
     margin-top: 0;
   }
 
@@ -141,3 +142,19 @@
   }
 }
  
+@media screen and (min-width: 768px) {
+  .timeline {
+    &__date {
+      font-size: 4rem;
+      left: calc(50% - 4rem);
+    }
+
+    &__list {
+      font-size: 3rem;
+    }
+
+    &__header {
+      font-size: 3.5rem;
+    }
+  }
+}

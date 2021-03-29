@@ -1,10 +1,14 @@
 <div class="welcome filter-transition">
-  <div class="welcome__header">Oskar Dadan</div>
-  <div class="welcome__sub-header">Front-end developer</div>
-  <div class="welcome__icons">
-    <a href="mailto:oskar.dadan@gmail.com">                       <fa-icon [icon]="faEnvelope"></fa-icon></a>
-    <a href="https://github.com/Niekarp"          target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a> 
-    <a href="https://linkedin.com/in/oskar-dadan" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+  <div class="welcome__background" #background></div>
+
+  <div class="welcome__container">
+    <h1 class="welcome__header">Oskar Dadan</h1>
+    <h2 class="welcome__sub-header">Front-end developer</h2>
+    <div class="welcome__icons">
+      <a href="mailto:oskar.dadan@gmail.com">                       <fa-icon [icon]="faEnvelope"></fa-icon></a>
+      <a href="https://github.com/Niekarp"          target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a> 
+      <a href="https://linkedin.com/in/oskar-dadan" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+    </div>
   </div>
   <fa-icon class="welcome__nav-arrow" [icon]="faChevronDown" (click)="navigateToSectionBottom()"></fa-icon>
 </div>

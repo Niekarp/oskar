@@ -1,5 +1,9 @@
+@import "colors.scss";
+
 :host {
-  background-color: rgb(72, 153, 223);
+  // background-color: #1f7dce;
+  // background-color: rgb(72, 153, 223);
+  overflow: hidden;
 }
 :host.off {
   background-color: rgb(23, 54, 81);
@@ -12,20 +16,56 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-   
-  // background-image: url("/assets/informatyk-2.jpg");
-  // background-size: cover;
-  // background-position: top;
 
   color: white;
   font-family: monospace;
 
+  &__background {
+    position: absolute;
+    top:    0;
+    left:   0;
+    right:  0;
+    bottom: 0;
+    background-color: white;
+    background: url("/assets/oskar.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-position-x: -26rem;
+    // background-position-y: -24rem;
+    z-index: -1;
+    overflow: hidden;
+    // opacity: 0;
+    // transform: scale(1.5);
+    // transition: opacity 1s ease-out, transform 3s ease-out;
+  }
+  
+  &__background--active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__container {
+    padding-left:  2rem;
+    padding-right: 2rem;
+    margin-top:    5rem;
+    align-self: center;
+  }
+
   &__header {
-    font-size: 5rem;
+    padding: 0;
+    margin:  0;
+    color: $primary-color;
+    border-bottom: 4px solid rgb(72, 153, 223);
+    font-weight: bold;
   }
 
   &__sub-header {
+    margin-top: 1rem;
     font-size: 2rem;
+    // text-shadow: 0px 1px 0px black, 1px 0px 0px black, -1px 0px 0px black, 0px -1px black;
+    color: $primary-color;
+    text-align: center;
   }
 
   &__nav-arrow {
@@ -33,6 +73,7 @@
     bottom: 0;
     font-size: 5rem;
     cursor: pointer;
+    color: $primary-color;
   }
 
   &__icons {
@@ -40,14 +81,31 @@
     justify-content: space-evenly;
 
     width: 100%;
+    // height: 5rem;
+    height: 5.8rem;
 
     margin-top: 3rem;
 
     a {
-      color: white;
+      width: 6rem;
+      height: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+
+      padding: 1rem;
+      // color: white;
+      // border: 1px solid white;
+      border-radius: 50%;
+      border: 3px solid $primary-color;
+      box-shadow: 0px 0px 3px white;
+
+      color: $primary-color;
     }
 
     fa-icon {
+      // width: 3rem;
+      height: 3rem;
       font-size: 3rem;
       cursor: pointer;
     }
@@ -56,9 +114,23 @@
 
 @media screen and (min-width: 1024px) {
   .welcome {
+    &__background {
+      background-position-x: -18rem;
+    }
+
+    &__container {
+      align-self: end;
+      padding-right: 17rem;
+      margin-top: 17rem;
+    }
+
     &__header {
       text-align: center;
       font-size: 7rem;
+
+      padding: 0rem;
+      color: $primary-color;
+      font-weight: bold;
     }   
 
     &__sub-header {
@@ -69,7 +141,7 @@
       padding: 0 15%;
 
       fa-icon {
-        font-size: 3.5rem;
+        // font-size: 3.5rem;
       }
     }
 

@@ -3,6 +3,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { HobbyComponent } from './components/hobby/hobby.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { NavItem } from "./components/navbar/navbar.component";
+import { faPhone, faSchool, faBook, faNotEqual, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 import { WelcomeComponent } from './components/welcome/welcome.component';
 
@@ -37,10 +38,10 @@ export class AppComponent {
 
     this.navbarConfig = [];
     this.navbarConfig.push(
-      { navName: ":)",           offsetTarget: () => 0, elementTarget: this.cmpWelcome.elRef.nativeElement },
-      { navName: "Doświadzenie", offsetTarget: experienceOffsetTarget, elementTarget: this.cmpExperience.elRef.nativeElement },
-      { navName: "Projekty",     offsetTarget: projectsOffsetTarget, elementTarget: this.cmpProjects.elRef.nativeElement },
-      { navName: "Hobby",        offsetTarget: hobbyOffsetTarget, elementTarget: this.cmpHobby.elRef.nativeElement }
+      { navName: "Kontakt",      offsetTarget: () => 0, elementTarget: this.cmpWelcome.elRef.nativeElement, icon: faPhone },
+      { navName: "Doświadzenie", offsetTarget: experienceOffsetTarget, elementTarget: this.cmpExperience.elRef.nativeElement, icon: faSchool },
+      { navName: "Projekty",     offsetTarget: projectsOffsetTarget, elementTarget: this.cmpProjects.elRef.nativeElement, icon: faBook },
+      { navName: "Hobby",        offsetTarget: hobbyOffsetTarget, elementTarget: this.cmpHobby.elRef.nativeElement, icon: faNotEqual }
     );
 
     this.highlightBackground(this.navbarConfig[0]);

@@ -8,6 +8,25 @@
 html, body {
   font-size: 10px;
   color: white;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 7rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
 }
 
 .full-screen {
@@ -17,6 +36,10 @@ html, body {
 
 .visible {
   opacity: 1 !important;
+}
+
+.invisible {
+  opacity: 0 !important;
 }
 
 .filter-transition {

@@ -2,7 +2,7 @@
   <div class="navbar__logo" [@blurUnblur]="navbarTitleBlurred ? 'blur' : 'unblur'" (@blurUnblur.done)="changeDisplayedTitle($event)">{{ navbarTitle }}</div>
   <ul  class="navbar__links">
     <li *ngFor="let navItem of config" (click)="navigateTo(navItem.elementTarget)" [ngClass]="{ 'navbar__link--active': navItem === currentSection }">
-      {{ navItem.navName }}
+      <fa-icon class="" [icon]="navItem.icon"></fa-icon> {{ navItem.navName }}
     </li>
   </ul>
   <div class="navbar__hamburger" (click)="onHamburgerClick()" #hamburger>

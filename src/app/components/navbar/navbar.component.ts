@@ -1,10 +1,12 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
+import { faPhone, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export interface NavItem {
   navName: string,
   offsetTarget: () => number,
-  elementTarget: HTMLElement
+  elementTarget: HTMLElement,
+  icon: IconDefinition,
 };
 
 @Component({
@@ -29,7 +31,9 @@ export class NavbarComponent implements OnInit {
   @ViewChild("hamburger")
   public hamburgerRef: ElementRef;
 
-  public navbarTitle = ":)";
+  public faPhone = faPhone;
+
+  public navbarTitle = "Kontakt";
   public pendingNavbarTitle = "";
   public navbarTitleBlurred = false;
   public hamburgerClicked = false;

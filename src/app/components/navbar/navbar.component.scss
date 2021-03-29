@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -61,11 +63,16 @@
 
     li {
       padding: 2rem;
+      transition: text-shadow 0.2s;
+    }
+
+    li:hover {
+      cursor: pointer;
+      text-shadow: 0px 0px 5px black;
     }
 
     li:active {
       background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 2rem;
     }
   }
 
@@ -81,7 +88,8 @@
 
   &__hamburger-stick {
     height: 0.2rem;
-    background-color: white;
+    // background-color: white;
+    background-color: $primary-color;
     transition: all 0.4s;
   }
 
@@ -112,11 +120,24 @@
     }
 
     &__links > li {
-      padding-bottom: 0.5rem;
+      position: relative;
+      padding: 1.5rem;
     }
 
-    &__link--active {
+    &__links > li::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left:   0;
+      right:  0;
+      height: 1px;
       border-bottom: 1px solid gold;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    &__link--active::before {
+      opacity: 1 !important;
     }
 
     &__logo {

@@ -15,7 +15,8 @@ img {
     position: relative;
     // padding-top: 30%;
     // background-image: url("/assets/cycling-1.jpg");
-    background-color: #4899df;
+    // background-color: #4899df;
+    background: linear-gradient(180deg, #0a5491 0%, #4899df 100%);
     background-position: center;
     object-fit: cover;
   }

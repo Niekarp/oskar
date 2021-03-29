@@ -1,9 +1,24 @@
 <div class="tech">
   <h2 class="tech__header"> Tech Stack </h2>
-  <div class="tech__logo-container">
-    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 0 }" src="/assets/cpp-logo.svg" />
-    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 50 }" src="/assets/angular-logo.svg" />
-    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 90 }" src="/assets/vuejs-logo.svg" />
-    <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 90 }" src="/assets/wordpress-logo.svg" />
+  <div class="tech__logo-wrapper">
+    <div class="tech__logo-container">
+      <div *ngIf="timelineProgress < 50;then cpp else ts"></div>    
+      <ng-template #cpp>
+        <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 0 && timelineProgress < 45 }"  src="/assets/cpp-logo.svg" />
+      </ng-template>
+      <ng-template #ts>
+        <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 50 }" src="/assets/ts-logo.svg" />
+      </ng-template>
+
+      <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 50 }" src="/assets/angular-logo.svg" />
+      <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 90 }" src="/assets/vuejs-logo.svg" />
+      <img class="tech__logo" [ngClass]="{ 'visible': timelineProgress > 90 }" src="/assets/wordpress-logo.svg" />
+    </div>
+    <div class="tech__logo-container tech__logo-container-overlay">
+      <img class="tech__logo tech__logo--overlay" [ngClass]="{ 'invisible': timelineProgress > 0 }"  src="/assets/egg.png" />
+      <img class="tech__logo tech__logo--overlay" [ngClass]="{ 'invisible': timelineProgress > 50 }" src="/assets/egg.png" >
+      <img class="tech__logo tech__logo--overlay" [ngClass]="{ 'invisible': timelineProgress > 90 }" src="/assets/egg.png" />
+      <img class="tech__logo tech__logo--overlay" [ngClass]="{ 'invisible': timelineProgress > 90 }" src="/assets/egg.png" />
+    </div>
   </div>
 </div>
