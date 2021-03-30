@@ -21,20 +21,10 @@
   font-family: monospace;
 
   &__background {
-    position: absolute;
-    top:    0;
-    left:   0;
-    right:  0;
-    bottom: 0;
-    background-color: white;
-    background: url("/assets/oskar.png");
-    background-position: center;
+    background-image: url("/assets/oskar.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    // background-position-x: -26rem;
-    // background-position-y: -24rem;
-    z-index: -1;
-    overflow: hidden;
+    background-repeat:   no-repeat;
+    background-position: center;
     // opacity: 0;
     // transform: scale(1.5);
     // transition: opacity 1s ease-out, transform 3s ease-out;
@@ -48,7 +38,7 @@
   &__container {
     padding-left:  2rem;
     padding-right: 2rem;
-    margin-top:    5rem;
+    margin-top:    16rem;
     align-self: center;
   }
 
@@ -57,6 +47,7 @@
     margin:  0;
     color: $primary-color;
     border-bottom: 4px solid rgb(72, 153, 223);
+    text-align: center;
     font-weight: bold;
   }
 
@@ -109,6 +100,14 @@
       font-size: 3rem;
       cursor: pointer;
     }
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .welcome {
+    &__header {
+      font-size: 4.7rem;
+    } 
   }
 }
 

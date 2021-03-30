@@ -1,10 +1,11 @@
 <div class="timeline">
   <div class="timeline__line-container">
     <div class="timeline__line">
-      <div [ngClass]="{ 'visible': progress > 0 }"  class="timeline__date">2011</div>
-      <div [ngClass]="{ 'visible': progress > 20 }" class="timeline__date">2013</div>
-      <div [ngClass]="{ 'visible': progress > 50 }" class="timeline__date">2016</div>
-      <div [ngClass]="{ 'visible': progress > 90 }" class="timeline__date">2020</div>
+      <!-- 2011 2013 2016 2020 -->
+      <div [ngClass]="{ 'visible': progress > 0 }"  class="timeline__date"></div>
+      <div [ngClass]="{ 'visible': progress > 20 }" class="timeline__date"></div>
+      <div [ngClass]="{ 'visible': progress > 50 }" class="timeline__date"></div>
+      <div [ngClass]="{ 'visible': progress > 90 }" class="timeline__date"></div>
     </div>
     <div class="timeline__line-cover" #lineCover>
       <div class="timeline__line-date" #lineDate>{{ year !== 0 ? year : "" }}</div>
@@ -12,12 +13,15 @@
   </div>
   <div class="timeline__info">
     <div class="timeline__beginning" [ngClass]="{ 'visible': progress > 0 }" >
+      <h2 class="timeline__header">Początki programowania</h2>
+      <h3 class="timeline__header-date">2011</h3>
       <ul class="timeline__list">
-        <li>początki programowania</li>
+        <li>urodzilem sie</li>
       </ul>
     </div> 
     <div class="timeline__xilo" [ngClass]="{ 'visible': progress > 20 }" >
       <h2 class="timeline__header">XI Liceum (Białystok)</h2>
+      <h3 class="timeline__header-date">2013 - 2016</h3>
       <ul class="timeline__list">
         <li>profil mat-fiz</li>
         <li>matura z informatyki (68%)</li>
@@ -25,6 +29,7 @@
     </div>
     <div class="timeline__pb" [ngClass]="{ 'visible': progress > 50 }" >
       <h2 class="timeline__header">Politechnika Białostocka</h2>
+      <h3 class="timeline__header-date">2016 - 2020</h3>
       <ul class="timeline__list">
         <li>Nr. 1 w rankingu studentów(2019)</li>
         <li>Stypendia rektora</li>
@@ -35,6 +40,7 @@
     </div> 
     <div class="timeline__finish" [ngClass]="{ 'visible': progress > 90 }" >
       <h2 class="timeline__header">Freelancer</h2>
+      <h3 class="timeline__header-date">2020 - obecnie</h3>
       <ul class="timeline__list">
         <li>Korepetycje</li>
         <li>Wordpress</li>

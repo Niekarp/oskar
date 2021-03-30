@@ -1,7 +1,14 @@
 :host {
+  padding-top: 3rem;
   // background-color: #368dd6;
   // background: linear-gradient(90deg, rgba(54,141,214,1) 0%, rgba(40,92,139,1) 100%);
-  background: linear-gradient(90deg, #e89494 0%, #285c8b 100%);
+  // background: linear-gradient(90deg, #e89494 0%, #285c8b 100%);
+
+  // background-image: url("/assets/oskar-vert.png");
+  // background-size:   cover;
+  // background-repeat: no-repeat;
+  // background-position-x: calc(50% - 30rem);
+  // background-position-y: center;
 }
 :host.off {
   background-color: rgb(23, 54, 81);
@@ -10,6 +17,14 @@
 .experience {
   min-height: 100vh;
   // background-color: beige;
+
+  &__background {
+    background-image: url("/assets/oskar-vert.png");
+    background-size:   cover;
+    background-repeat: no-repeat;
+    background-position-x: calc(50% - 30rem);
+    background-position-y: center;
+  }
 
   &__timeline {
     display: block;
@@ -25,9 +40,21 @@
 }
 
 @media screen and (min-width: 768px) {
+  :host {
+    background-position: center;    
+  }
+  
   .experience {
     &__tech {
-      margin-top: 10rem;
+      // margin-top: 10rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .experience {
+    &__background {
+      background-position: center;
     }
   }
 }
