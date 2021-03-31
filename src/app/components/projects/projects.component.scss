@@ -1,6 +1,12 @@
+@import "colors.scss";
+
 :host {
-  background: linear-gradient(90deg, #a2cdf0 0%, #285c8b 100%);
+  // background: linear-gradient(90deg, #a2cdf0 0%, #285c8b 100%);
   // background-color: #4899df;
+  position: relative;
+}
+:host.off {
+  background-color: rgb(23, 54, 81);
 }
 
 .projects {
@@ -9,10 +15,50 @@
   // grid-template-columns: 100%;
   grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
   justify-items: center;
+  align-items: baseline;
   // gap: 2rem;
 
+  &__background {
+    background-image: url("/assets/computers.png");
+    background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: left;
+    // background-position-y: -6rem;
+    background-position-x: -101rem;
+    background-position-y: -1rem;
+  }
+
+  &__header {
+    align-self: flex-start;
+    max-width: 50rem;
+    padding: 3rem;
+    padding-top: 22rem;
+    margin: 0;
+    color: $primary-color;
+
+    padding-left: 0;
+    margin-left: 4rem;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: flex;
+
+    h1 {
+      margin: 0;
+      // border-bottom: 5px dotted rgba(23, 54, 81, 0.5);
+      border-left: 1.2rem dotted black;
+      text-shadow: -2px 0px 1px rgb(0,0,0), 0px 2px 1px rgb(0,0,0), 2px 0px 1px rgb(0,0,0), 0px -2px 1px rgb(0,0,0);
+      color: white;
+      letter-spacing: -2px;
+      font-size: 8rem;
+      font-weight: normal;
+      line-height: 1;
+      padding-left: 2rem;
+    }
+  }
+
   &__item {
-    width: 35rem;
+    width: 100%;
+    max-width: 50rem;
     padding: 3rem;
   }
 
@@ -20,3 +66,28 @@
     padding-top: 6rem;
   }
 } 
+
+@media screen and (min-width: 768px) {
+  .projects {
+    &__header {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .projects {
+    // grid-template-areas: "p1 line p2";
+    // grid-template-columns: 1fr 50px 1fr;
+    grid-template-columns: repeat(3, 1fr);
+
+    &__header {
+      grid-column: unset;
+    }
+  }
+
+  .line {
+    grid-area: line;
+    background-color: red;
+  }
+}

@@ -56,3 +56,6 @@ h2 {
 .filter-transition {
   transition: filter 1s;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

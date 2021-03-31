@@ -44,7 +44,7 @@ export class HobbyComponent {
       return ((a as HTMLElement).style.left < (b as HTMLElement).style.left) ? -1 : 1;
     });
 
-    new Audio("/assets/o4.mp3").play();
+    // new Audio("/assets/o4.mp3").play();
 
     let cummTime = 0;
     for (let i = 0; i < sortedNotesA.length; ++i) {

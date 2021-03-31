@@ -1,10 +1,10 @@
-<div class="project">
-  <img class="project__img" [src]="project.imgSrc"/>
+<mat-card class="project">
   <div class="project__header">
     {{ project.title }}
     <img class="project__tech" [src]="'/assets/' + project.tech" />
   </div>
+  <img class="project__img" [src]="project.imgSrc"/>
   <div class="project__desc">
     {{ project.desc }}
   </div>
-</div>
+</mat-card>

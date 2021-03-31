@@ -1,14 +1,23 @@
+@import "colors.scss";
+
+mat-card {
+  overflow: hidden;
+  padding: 0;
+}
+
 .project {
   // width:  100%;
-  // height: 100%;
-  border: 1px solid white;
-  border-radius: 2rem;
-  background-color: rgba(23, 54, 81, 0.5);
+  height: 55rem;
+  // border: 1px solid white;
+  // border-radius: 2rem;
+  background-color: white;
+  color: black;
+  // background-color: rgba(23, 54, 81, 0.5);
 
   &__img {
     width: 100%;
     height: 30rem;
-    border-radius: 2rem;
+    // border-radius: 2rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom: 1px solid white;
@@ -20,11 +29,14 @@
     text-align: left;
     position: relative;
     padding: 1rem;
-    padding-left: 2rem
+    padding-left: 2rem;
+    background-color: $primary-color;
+    color: white;
+    // border-radius: 2rem 2rem 0 0;
   }
 
   &__desc {    
-    border-top: 1px dotted white;
+    // border-top: 1px dotted white;
     padding: 2rem;
     font-size: 2rem;
   }

@@ -14,6 +14,8 @@ import { HobbyComponent } from './components/hobby/hobby.component';
 import { ProjectComponent } from './components/project/project.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { MatCardModule } from "@angular/material/card";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
