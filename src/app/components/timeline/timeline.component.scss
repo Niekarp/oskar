@@ -160,13 +160,14 @@
   }
 
   &__header {
+    display: inline-block;
     text-align: left;
-    // border-bottom: 1px solid $primary-color;
+    border-bottom: 3px solid;
     font-size: 2rem;
     color: $primary-color;
-    padding-left: 2rem;
+    margin-left: 2rem;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
   }
 
   &__header-date {
@@ -214,7 +215,7 @@
     }
 
     &__header {
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
 
     &__header-date {

@@ -1,5 +1,5 @@
 img {
-  max-height: 50%;
+  max-height: 80%;
 }
 
 .hobby {
@@ -9,6 +9,7 @@ img {
   overflow: hidden;
   font-size: 4rem;
   text-align: center;
+  color: black;
   // color: red;
 
   &__music {
@@ -16,45 +17,63 @@ img {
     // padding-top: 30%;
     // background-image: url("/assets/cycling-1.jpg");
     // background-color: #4899df;
-    background: linear-gradient(180deg, #0a5491 0%, #4899df 100%);
+    // background: linear-gradient(180deg, #0a5491 0%, #4899df 100%);
     background-position: center;
     object-fit: cover;
   }
 
   &__music-title {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    // margin-top: 2rem;
+    margin-top: 7rem;
+    text-shadow: -2px 0px 1px black, 0px 2px 1px black, 2px 0px 1px black, 0px -2px 1px black;
+    color: white;
   }
 
   &__upper-image {
     position: absolute;
     top:   0;
-    right: 0;
+    right: 4rem;
     // transform: rotateZ(45deg);
-    opacity: 0.5;
+    opacity: 0.8;
   }
 
   &__lower-image {
+    // width: 58rem;
+    // height: 100%;
+    max-height: 100%;
+
     position: absolute;
+    top: -6rem;
+    left: -12rem;
     bottom: 0;
-    left:   0;
-    transform: rotateZ(-45deg) translateX(-2rem);
+    // transform: rotateZ(-45deg) translateX(-2rem);
+    
+    z-index: 999;
+    
+    object-fit: cover;
+    z-index: 8888;
+    
+    transform: scale(1.4) rotate(-6deg);
   }
 
   &__composing-wrapper {
+    display: flex;
+    height: 5.75rem;
+    align-items: center;
     text-align: left;
-    height: auto;
-    display: block;
-    margin-top: -1rem;
-    margin-bottom: -0.5rem;
+    margin: 0 2rem;
+    // margin-top: -1rem;
+    // margin-bottom: -0.5rem;
+    background-color: rgba(0,0,0, 0.1);
   }
 
   &__composing {
     font-size: 2.5rem;
-    border: 2px solid white;
-    padding: 0.5rem;
+    // border: 2px solid black;
+    // padding: 0.5rem;
     border-radius: 0 1rem 1rem 0;
-    border-left: 0;
+    // border-left: 12px dotted black;
+    // margin-left: 2rem;
   }
 
   &__composing:hover {
@@ -63,14 +82,17 @@ img {
 
   &__violin-wrapper {
     display: flex;
-    justify-content: right;
+    justify-content: center;
     margin-bottom: 0;
     margin-top: 0;
+    position: relative;
+    top: 2.7rem;
+    z-index: 999;
   }
 
   &__violin {
-    font-size: 2.5rem;
-    border: 2px solid white;
+    font-size: 5rem;
+    // border: 2px solid black;
     padding: 0.5rem;
     border-radius: 1rem 0rem 0rem 1rem;
     border-right: 0;
@@ -83,7 +105,8 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: rgb(35, 69, 99);
+    background-position-y: calc(50% - 2rem);
+    // background-color: rgb(35, 69, 99);
     object-fit: cover;
     color: #4899df;
   }
@@ -92,8 +115,11 @@ img {
     color: white;
     position: relative;
     text-align: left;
-    padding-left: 2rem;
-    margin-bottom: 22rem;
+    text-shadow: -2px 0px 1px black, 0px 2px 1px black, 2px 0px 1px black, 0px -2px 1px black;
+    // padding-left: 2rem;
+    margin-top: 0;
+    // padding-right: 2rem;
+    // margin-bottom: 22rem;
   }
 
   &__bike-fotter {
@@ -105,9 +131,8 @@ img {
     text-align: center;
     padding: 3rem;
 
-    background-color: rgba(0, 0, 0, 0.3);
-    color: white;
-    border-radius: 0% 20% 0 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: black;
   }
 
   &__svg {
@@ -116,7 +141,7 @@ img {
     width: 100%;
     left: 0;
     z-index: 0;
-    border-top: 1rem #4899de dashed;
+    // border-top: 1rem #4899de dashed;
     height: 45rem;
     overflow: hidden;
   }
@@ -135,7 +160,7 @@ img {
   &__line {
     height: 0.3rem;
     position: relative;
-    background-color: white;
+    background-color: black;
   }
 
   &__note {
@@ -206,7 +231,7 @@ img {
     font-size: 5rem;
 
     &__music-title {
-      margin-top: 5rem;
+      margin-top: 7rem;
     }
 
     &__composing-wrapper {
@@ -219,7 +244,7 @@ img {
     }
 
     &__violin {
-      font-size: 3rem;
+      font-size: 5rem;
     }
 
     &__violin-wrapper {
@@ -227,7 +252,7 @@ img {
     }
     
     &__bike-title {
-      padding-left: 12rem;
+      // padding-left: 12rem;
     }
 
     &__svg {
@@ -235,8 +260,8 @@ img {
     }
 
     &__bike-fotter {
-      font-size: 3rem;
-      border-radius: 20% 20% 00% 0;
+      font-size: 2.7rem;
+      // border-radius: 20% 20% 00% 0;
     }
   }
 }
