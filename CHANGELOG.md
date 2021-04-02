@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](///compare/v0.2.0...v0.3.0) (2021-04-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* **app!:** j vision completed
+
+### Features
+
+* **hobby:** add desktop version 589b4e4
+* **projects:** add desktop version 5b250c4
+* **welcome, navbar:** desktop version 7a37185
+
+
+### Bug Fixes
+
+* **hobby:** better spacing eff8c51
+* **hobby:** hide logs 62cd9bb
+* **navbar:** better section detection cec2ba7
+
+
+### impr
+
+* **app!:** mobile adjustments 8510f0d
+
 ## [0.2.0](///compare/v0.1.0...v0.2.0) (2021-03-23)
 
 
