@@ -1,5 +1,5 @@
-img {
-  max-height: 80%;
+:host.off {
+  background-color: rgb(23, 54, 81);
 }
 
 .hobby {
@@ -24,27 +24,29 @@ img {
 
   &__music-title {
     // margin-top: 2rem;
-    margin-top: 7rem;
+    margin: 5rem 0 2rem 0;
     text-shadow: -2px 0px 1px black, 0px 2px 1px black, 2px 0px 1px black, 0px -2px 1px black;
     color: white;
   }
 
   &__upper-image {
     position: absolute;
-    top:   0;
-    right: 4rem;
-    // transform: rotateZ(45deg);
-    opacity: 0.8;
+    top: 0.3rem;
+    right: -6rem;
+    opacity: 0.4;
+    max-height: 80%;
   }
 
   &__lower-image {
     // width: 58rem;
-    // height: 100%;
-    max-height: 100%;
+    // max-height: 100%;
+    width: 43rem;
+    height: 30rem;
+    
 
     position: absolute;
-    top: -6rem;
-    left: -12rem;
+    top: -5rem;
+    left: -28rem;
     bottom: 0;
     // transform: rotateZ(-45deg) translateX(-2rem);
     
@@ -53,7 +55,7 @@ img {
     object-fit: cover;
     z-index: 8888;
     
-    transform: scale(1.4) rotate(-6deg);
+    transform: rotate(-6deg);
   }
 
   &__composing-wrapper {
@@ -68,7 +70,7 @@ img {
   }
 
   &__composing {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     // border: 2px solid black;
     // padding: 0.5rem;
     border-radius: 0 1rem 1rem 0;
@@ -77,7 +79,7 @@ img {
   }
 
   &__composing:hover {
-    background-color: #2d5c86; 
+    // background-color: #2d5c86; 
   }
 
   &__violin-wrapper {
@@ -105,7 +107,6 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: calc(50% - 2rem);
     // background-color: rgb(35, 69, 99);
     object-fit: cover;
     color: #4899df;
@@ -226,6 +227,34 @@ img {
   }
 }
 
+@media screen and (min-width: 768px) {
+  .hobby {
+    &__bike {
+      background-position-y: calc(50% - 2rem);
+    }
+
+    &__music-title {
+      margin: 7rem 0 0 0;
+    }
+
+    &__composing {
+      font-size: 2.5rem;
+    }
+
+    &__upper-image {
+      right: 4rem;
+      opacity: 0.8;
+    }
+
+    &__lower-image {
+      width: 53rem;
+      height: 38rem;
+      top: -11rem;
+      left: -22rem;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .hobby {
     font-size: 5rem;
@@ -262,6 +291,17 @@ img {
     &__bike-fotter {
       font-size: 2.7rem;
       // border-radius: 20% 20% 00% 0;
+    }
+
+    &__upper-image {
+      top: 0;
+    }
+
+    &__lower-image {
+      width:  73rem;
+      height: 53rem;
+      top: -14rem;
+      left: -22rem;
     }
   }
 }

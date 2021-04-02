@@ -3,7 +3,7 @@
 .timeline {
   display: grid;
   // grid-template-columns: 30% 70%;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 22% 78%;
 
   height: 100%;
   padding-top: 5rem;
@@ -163,7 +163,7 @@
     display: inline-block;
     text-align: left;
     border-bottom: 3px solid;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: $primary-color;
     margin-left: 2rem;
     margin-top: 0;
@@ -183,7 +183,15 @@
     margin: 0;
   }
 }
- 
+
+@media screen and (min-width: 400px) {
+  .timeline {
+    &__header {
+      font-size: 2rem;
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   .timeline {
     grid-template-columns: 15% 85%;

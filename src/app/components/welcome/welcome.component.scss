@@ -78,8 +78,8 @@
     margin-top: 3rem;
 
     a {
-      width: 6rem;
-      height: 6rem;
+      width: 5rem;
+      height: 5rem;
       display: flex;
       align-items: center;
       justify-content: center;  
@@ -96,8 +96,8 @@
 
     fa-icon {
       // width: 3rem;
-      height: 3rem;
-      font-size: 3rem;
+      height: 2.5rem;
+      font-size: 2.5rem;
       cursor: pointer;
     }
   }
@@ -111,7 +111,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .welcome {
     &__background {
       background-position-x: -18rem;
@@ -119,7 +119,7 @@
 
     &__container {
       align-self: flex-end;
-      padding-right: 17rem;
+      padding-right: 5rem;
       margin-top: 17rem;
     }
 
@@ -139,13 +139,28 @@
     &__icons {
       padding: 0 15%;
 
+      a {
+        width: 6rem;
+        height: 6rem;
+      }
+
       fa-icon {
+        height: 3rem;
+        font-size: 3rem;
         // font-size: 3.5rem;
       }
     }
 
     &__nav-arrow {
       font-size: 6rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .welcome {
+    &__container {
+      padding-right: 17rem;
     }
   }
 }
