@@ -68,6 +68,12 @@
   }
 } 
 
+@media screen and (max-width: 400px) {
+  .projects {
+    overflow: hidden;
+  }
+}
+
 @media screen and (min-width: 450px) {
   .projects {
     grid-template-columns: repeat(auto-fill, minmax(42rem, 1fr));

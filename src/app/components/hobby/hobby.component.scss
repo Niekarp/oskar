@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 :host.off {
   background-color: rgb(23, 54, 81);
 }
@@ -35,6 +37,7 @@
     right: -6rem;
     opacity: 0.4;
     max-height: 80%;
+    z-index: 100;
   }
 
   &__lower-image {
@@ -67,6 +70,8 @@
     // margin-top: -1rem;
     // margin-bottom: -0.5rem;
     background-color: rgba(0,0,0, 0.1);
+    position: relative;
+    z-index: 200;
   }
 
   &__composing {
@@ -155,13 +160,34 @@
     flex-direction: column;
     justify-content: space-evenly;
     position: relative;
-    padding: 0 2rem;
+    margin: 0 2rem;
+    // overflow: hidden;
   }
 
   &__line {
     height: 0.3rem;
     position: relative;
     background-color: black;
+    z-index: 101;
+  }
+
+  &__notes-wrapper {
+    width: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 20s linear;
+  }
+
+  &__note-wrapper--moving {
+    // transform: translateX(2 * -80%);
+    animation-name: moving-low;
+    animation-duration: 22s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
   }
 
   &__note {
@@ -170,29 +196,49 @@
     position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+    position: absolute;
+    top: 7.7rem;
+    left: 10%;
     z-index: 1;
   }
 
+  &__note--treble {
+  }
+
+  &__note--bass {
+
+  }
+
   &__note--playing {
-    background-color: rgba(243, 243, 255, 0.5);
+    background-color: $primary-color;
   }
 
   &__note--quarter-up {
     background-image: url("/assets/quarter-note-up.png");
+    transform: translateY(-73%)
   }
 
   &__note--quarter-down {
     background-image: url("/assets/quarter-note-down.png");
-    top: 100%;
+    // top: 100%;
   }
 
   &__note--half-up {
     background-image: url("/assets/half-note-up.png");
+    transform: translateY(-72%);
   }
 
   &__note--half-down {
     background-image: url("/assets/half-note-down.png");
     top: 100%;
+  }
+
+  &__note--half-dotted-down {
+    background-image: url("/assets/half-note-dotted-down.png");
+  }
+
+  &__note--silent {
+    background-image: url("/assets/silent-note.png");
   }
 
   &__note--top {
@@ -222,8 +268,54 @@
     height: 100%;
     position: absolute;
     top: 0;
-    background: url("/assets/treble-clef.png");
     background-size: cover;
+    z-index: 101;
+
+    &--treble {
+      background-image: url("/assets/treble-clef.png"); 
+    }
+
+    &--bass {
+      background-image: url("/assets/bass-clef.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 60%;
+      top: 1.6rem;
+      left: 1rem;
+    }
+  }
+
+  &__measure {
+    width: 0.2rem;
+    height: 72%;
+    position: absolute;
+    top: 1.2rem;
+    bottom: 0;
+    background-color: black;
+    transform: translateX(-0.7rem);
+    z-index: 1;
+  }
+
+  &__measure:first-of-type {
+    display: none;
+  }
+
+  &__hider {
+    height: 150%;
+    position: absolute;
+    top:  0;
+    background-color: white;
+    z-index: 100;
+
+    &--left {
+      width: 20%;
+      left: calc(0% - 2rem);
+    }
+
+    &--right {
+      width: 2rem;
+      right: calc(0% - 2rem);
+    }
   }
 }
 
@@ -251,6 +343,27 @@
       height: 38rem;
       top: -11rem;
       left: -22rem;
+    }
+  }
+
+  .staff {
+    &__notes-wrapper {
+      width: 100%;
+    }
+
+    &__hider {
+      &--left {
+        width: 12%;
+      }
+    }
+
+    &__note-wrapper--moving {
+      // transform: translateX(2 * -80%);
+      animation-name: moving-mid;
+      animation-duration: 18s;
+      animation-delay: 5s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
     }
   }
 }
@@ -304,4 +417,22 @@
       left: -22rem;
     }
   }
+
+  .staff {
+    &__hider {
+      &--left {
+        width: 10%;
+      }
+    }
+  }
+}
+
+@keyframes moving-low {
+  from {transform: translateX(0)}
+  to   {transform: translateX(-210%)};
+}
+
+@keyframes moving-mid {
+  from {transform: translateX(0);}
+  to   {transform: translateX(2 * -80%);}
 }

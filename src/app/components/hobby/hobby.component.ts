@@ -1,6 +1,13 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 
+interface Note {
+  pitch:  number,
+  length: number,
+  position: number;
+  playTime: number;
+}
+
 @Component({
   selector: 'app-hobby',
   templateUrl: './hobby.component.html',
@@ -9,7 +16,7 @@ import { faPlayCircle } from "@fortawesome/free-regular-svg-icons";
 export class HobbyComponent {
   public faPlay = faPlayCircle;
 
-  private beatTime = 450;
+  private beatTime = 435;
   private playTimes = [
     0,
     2 * this.beatTime,
@@ -28,47 +35,248 @@ export class HobbyComponent {
   ];
   private played = false;
 
+  public basePitch = 7.7;
+  public basePosition = 10;
+  // public baseMeasureLength = 30;
+
+  public notes: Array<Note> = [
+    { pitch: 8, length: 8,  position: 0, playTime: 0 },
+    { pitch: 6, length: 8,  position: 0, playTime: 0 },
+
+    { pitch: 4, length: 4,  position: 0, playTime: 0 },
+    { pitch: 6, length: 4,  position: 0, playTime: 0 },
+    { pitch: 8, length: 4,  position: 0, playTime: 0 },
+    { pitch: 7, length: 8,  position: 0, playTime: 0 },
+
+    { pitch: 7, length: -4,  position: 0, playTime: 0 },
+    { pitch: 7, length: 8,  position: 0, playTime: 0 },
+
+    { pitch: 5, length: 8,  position: 0, playTime: 0 },
+    { pitch: 4, length: 4,  position: 0, playTime: 0 },
+    { pitch: 6, length: 4,  position: 0, playTime: 0 },
+
+    { pitch: 5, length: 4,  position: 0, playTime: 0 },
+    { pitch: 7, length: 12, position: 0, playTime: 0 },
+
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+
+    { pitch: 8, length: 8, position: 0, playTime: 0 },
+    { pitch: 6, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 4, length: 4, position: 0, playTime: 0 },
+    { pitch: 6, length: 4, position: 0, playTime: 0 },
+    { pitch: 8, length: 4, position: 0, playTime: 0 },
+    { pitch: 9, length: 4, position: 0, playTime: 0 },
+
+    { pitch: 7, length: 12, position: 0, playTime: 0 },
+    { pitch: 7, length: 4, position: 0, playTime: 0 },
+
+    { pitch: 5, length: 4, position: 0, playTime: 0 },
+    { pitch: 4, length: 4, position: 0, playTime: 0 },
+    { pitch: 6, length: 4, position: 0, playTime: 0 },
+    { pitch: 9, length: 4, position: 0, playTime: 0 },
+
+    { pitch: 8, length: 12, position: 0, playTime: 0 },
+    { pitch: 6, length: 4, position: 0, playTime: 0 },
+
+    { pitch: 4, length: 4,  position: 0, playTime: 0 },
+    { pitch: 3, length: 4,  position: 0, playTime: 0 },
+    { pitch: 5, length: 4,  position: 0, playTime: 0 },
+    { pitch: 7, length: 4,  position: 0, playTime: 0 },
+
+    { pitch: 10, length: 4,  position: 0, playTime: 0 },
+    { pitch: 9, length: 12,  position: 0, playTime: 0 },
+
+    { pitch: 8, length: 4, position: 0, playTime: 0 },
+    { pitch: 9, length: 4, position: 0, playTime: 0 },
+    { pitch: 10, length: 4, position: 0, playTime: 0 },
+    { pitch: 7, length: 4, position: 0, playTime: 0 },
+
+    { pitch: 5, length: 8, position: 0, playTime: 0 },
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+  ];
+  public notesBass: Array<Note> = [
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+    { pitch: 7, length: -8, position: 0, playTime: 0 },
+
+    { pitch: 6, length: 8, position: 0, playTime: 0 },
+    { pitch: 5, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 4, length: 8, position: 0, playTime: 0 },
+    { pitch: 1, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 2, length: 8, position: 0, playTime: 0 },
+    { pitch: 4, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 3, length: 8, position: 0, playTime: 0 },
+    { pitch: 3, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 2, length: 8, position: 0, playTime: 0 },
+    { pitch: 0, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 1, length: 8, position: 0, playTime: 0 },
+    { pitch: 4, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 5, length: 8, position: 0, playTime: 0 },
+    { pitch: 6, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 5, length: 8, position: 0, playTime: 0 },
+    { pitch: 3, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 4, length: 8, position: 0, playTime: 0 },
+    { pitch: 4, length: 8, position: 0, playTime: 0 },
+
+    { pitch: 5, length: -8, position: 0, playTime: 0 },
+    { pitch: 5, length: -8, position: 0, playTime: 0 },
+  ];
+  public time = 0;
+  public scroll = 0;
+
+  public numberOfMeasures: Array<number>;
+
   constructor(public elRef: ElementRef) {
+    this.time = 0;
+    this.notes[0].position = this.time;
+    this.notes[0].playTime = this.beatTime * (this.notes[0].length / 4);
+
+    this.notes.forEach((note, idx) => { 
+      if (idx === 0) return;
+
+      this.time += Math.abs(this.notes[idx - 1].length);
+      
+      note.position = this.time;
+      note.playTime = this.beatTime *  Math.abs((note.length / 4));
+    });
+
+
+    this.time = 0;
+    this.notesBass[0].position = this.time;
+    this.notesBass[0].playTime = this.beatTime * Math.abs((this.notesBass[0].length / 4));
+
+    this.notesBass.forEach((note, idx) => {
+      if (idx == 0) return;
+
+      this.time += Math.abs(this.notesBass[idx - 1].length);
+      
+      note.position = this.time;
+      note.playTime = this.beatTime *  Math.abs((note.length / 4));
+    });
+
+    this.numberOfMeasures = new Array(Math.floor((this.time + this.notes[this.notes.length - 1].length) / 16)).fill(0);
+    this.numberOfMeasures.push(0);
+    // console.log("there are ", this.numberOfMeasures);
+    
   }
 
   public playMusic(): void {
     if(this.played) return;
     this.played = true;
     
-    const notes = (this.elRef.nativeElement as HTMLElement).getElementsByClassName("staff__note");
+    let notes = (this.elRef.nativeElement as HTMLElement).getElementsByClassName("staff__note--treble");
 
-    const sortedNotesA = Array.from(notes).slice(0, 6).sort((a, b) => {
-      return ((a as HTMLElement).style.left < (b as HTMLElement).style.left) ? -1 : 1;
-    });
-    const sortedNotesB = Array.from(notes).slice(6).sort((a, b) => {
-      return ((a as HTMLElement).style.left < (b as HTMLElement).style.left) ? -1 : 1;
+    const sortedNotesTreble = Array.from(notes).sort((a, b) => {
+      const aNum = Number((a as HTMLElement).style.left.substr(0, (a as HTMLElement).style.left.length - 1));
+      const bNum = Number((b as HTMLElement).style.left.substr(0, (b as HTMLElement).style.left.length - 1));
+
+      return ( aNum < bNum ) ? -1 : 1;
     });
 
-    // new Audio("/assets/o4.mp3").play();
+    notes = (this.elRef.nativeElement as HTMLElement).getElementsByClassName("staff__note--bass"); 
+    const sortedNotesBass = Array.from(notes).sort((a, b) => {
+      const aNum = Number((a as HTMLElement).style.left.substr(0, (a as HTMLElement).style.left.length - 1));
+      const bNum = Number((b as HTMLElement).style.left.substr(0, (b as HTMLElement).style.left.length - 1));
+
+      return ( aNum < bNum ) ? -1 : 1;
+    }); 
+    // console.log(sortedNotes);
+    
+
+    // const sortedNotesA = Array.from(notes).slice(0, 6).sort((a, b) => {
+    //   return ((a as HTMLElement).style.left < (b as HTMLElement).style.left) ? -1 : 1;
+    // });
+    // const sortedNotesB = Array.from(notes).slice(6).sort((a, b) => {
+    //   return ((a as HTMLElement).style.left < (b as HTMLElement).style.left) ? -1 : 1;
+    // });
+
+    // console.log(sortedNotes);
+    
 
     let cummTime = 0;
-    for (let i = 0; i < sortedNotesA.length; ++i) {
-      cummTime += this.playTimes[i];
+    for (let i = 0; i < sortedNotesTreble.length; ++i) {
+      if (this.notes[i].length > 0) {
+        // console.log(this.notes[i].length);
+        
+        setTimeout(() => {
+          sortedNotesTreble.forEach(note => note.classList.remove("staff__note--playing"));
 
-      setTimeout(() => {
-        sortedNotesA.forEach(note => note.classList.remove("staff__note--playing"));
-
-        (sortedNotesA[i] as HTMLElement).classList.add("staff__note--playing");
-      }, cummTime);
+          (sortedNotesTreble[i] as HTMLElement).classList.add("staff__note--playing");
+        }, cummTime);
+      }
+      cummTime += this.notes[i].playTime;
     }
 
-    for (let i = 0; i < sortedNotesB.length; ++i) {
-      cummTime += this.playTimes[6 + i];
+    cummTime = 0;
+    for (let i = 0; i < sortedNotesBass.length; ++i) {
+      if (this.notesBass[i].length > 0) {
+        // console.log(this.notes[i].length);
+        
+        setTimeout(() => {
+          sortedNotesBass.forEach(note => note.classList.remove("staff__note--playing"));
 
-      setTimeout(() => {
-        sortedNotesA.forEach(note => note.classList.remove("staff__note--playing"));
-        sortedNotesB.forEach(note => note.classList.remove("staff__note--playing"));
-
-        (sortedNotesB[i] as HTMLElement).classList.add("staff__note--playing");
-      }, cummTime);
+          (sortedNotesBass[i] as HTMLElement).classList.add("staff__note--playing");
+        }, cummTime);
+      }
+      cummTime += this.notesBass[i].playTime;
     }
 
-    // console.log(notes);
+    // 221.5px
+
+    (document.getElementsByClassName("staff__notes-wrapper")[0] as HTMLElement).classList.add("staff__note-wrapper--moving");
+    (document.getElementsByClassName("staff__notes-wrapper")[1] as HTMLElement).classList.add("staff__note-wrapper--moving");
+    // setTimeout(() => {
+    //   (document.getElementsByClassName("staff__notes-wrapper")[0] as HTMLElement).classList.add("staff__note-wrapper--moving");
+    //   (document.getElementsByClassName("staff__notes-wrapper")[1] as HTMLElement).classList.add("staff__note-wrapper--moving");
+    //   // sortedNotes.forEach(note => note.classList.add("staff__note-wrapper--moving"));
+    // }, 5000);
+
+    new Audio("/assets/o4.mp3").play();
+
+    // let cummTime = 0;
+    // for (let i = 0; i < sortedNotesA.length; ++i) {
+    //   cummTime += this.notes[i].playTime;
+
+    //   setTimeout(() => {
+    //     sortedNotesA.forEach(note => note.classList.remove("staff__note--playing"));
+
+    //     (sortedNotesA[i] as HTMLElement).classList.add("staff__note--playing");
+    //   }, cummTime);
+    // }
+
+    // for (let i = 0; i < sortedNotesB.length; ++i) {
+    //   cummTime += this.playTimes[6 + i];
+
+    //   setTimeout(() => {
+    //     sortedNotesA.forEach(note => note.classList.remove("staff__note--playing"));
+    //     sortedNotesB.forEach(note => note.classList.remove("staff__note--playing"));
+
+    //     (sortedNotesB[i] as HTMLElement).classList.add("staff__note--playing");
+    //   }, cummTime);
+    // }
+
+    console.log(this.notes);
     
     // console.log(sortedNotesA);
     // console.log(sortedNotesB);

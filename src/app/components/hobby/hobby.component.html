@@ -2,41 +2,77 @@
   <div class="hobby__music">
     <div class="hobby__music-title">Muzyka</div>
     <div class="staff__row">
-      <div class="staff__line">
-        <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 20%"></div>
-        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 68%"></div>
-      </div>
-      <div class="staff__line">
-        <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 32%"></div>
-        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 56%"></div>
-        <div class="staff__note staff__note--quarter-down staff__note--middle" style="left: 80%"></div>
-      </div>
-      <div class="staff__line">
-        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 44%"></div>
-      </div>
-      <div class="staff__line">
-      </div>
       <div class="staff__line"></div>
-      <div class="staff__cleff"></div>
+      <div class="staff__line"></div>
+      <div class="staff__line"></div>
+      <div class="staff__line"></div>
+      <div class="staff__line"></div>
+      <div class="staff__cleff staff__cleff--treble"></div>
+
+      <div class="staff__hider staff__hider--left"></div>
+      <div class="staff__hider staff__hider--right"></div>
+
+      <div class="staff__notes-wrapper">
+        <div *ngFor="let note of notes; let i = index;"
+          class="staff__note staff__note--treble staff__note--quarter-down"
+          [ngClass]="{'staff__note--silent':           note.length <  0,
+                      'staff__note--quarter-down':     (note.length == 4 && note.pitch > 4),
+                      'staff__note--quarter-up':       (note.length == 4 && note.pitch <= 4),
+                      'staff__note--half-down':        (note.length == 8 && note.pitch > 4),
+                      'staff__note--half-up':          (note.length == 8 && note.pitch <= 4),
+                      'staff__note--half-dotted-down': note.length == 12 }"
+          [ngStyle]="{ 'left': basePosition + note.position + '%',
+                      'top': basePitch    - note.pitch * 0.775 + 'rem' }">
+        </div>
+        <div *ngFor="let measure of numberOfMeasures; let idx = index;"
+              class="staff__measure"
+              [ngStyle]="{ 'left': basePosition + (idx * 16)+ '%' }">
+        </div>
+      </div>
+      <!-- <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 20%"></div>
+      <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 32%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 44%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 56%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 68%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--middle" style="left: 80%"></div> -->
     </div>
     <div class="hobby__composing-wrapper">
       <fa-icon [icon]="faPlay" (click)="playMusic()" style="font-size: 3rem; padding: 0 1.4rem;"></fa-icon> <span class="hobby__composing">Gram na skrzypcach i komponuje</span>
     </div>
     <div class="staff__row">
-      <div class="staff__line">
-      </div>
-      <div class="staff__line">
-        <div class="staff__note staff__note--half-down staff__note--middle" style="left: 10%"></div>
-        <div class="staff__note staff__note--half-down staff__note--middle" style="left: 85%"></div>
-        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 55%"></div>
-      </div>
-      <div class="staff__line">
-        <div class="staff__note staff__note--half-down staff__note--middle" style="left: 25%"></div>
-        <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 40%"></div>
-        <div class="staff__note staff__note--quarter-down staff__note--middle" style="left: 70%"></div>
-      </div>
       <div class="staff__line"></div>
       <div class="staff__line"></div>
+      <div class="staff__line"></div>
+      <div class="staff__line"></div>
+      <div class="staff__line"></div>
+      <div class="staff__cleff staff__cleff--bass"></div>
+
+      <div class="staff__hider staff__hider--left"></div>
+      <div class="staff__hider staff__hider--right"></div>
+
+      <div class="staff__notes-wrapper">
+        <div *ngFor="let note of notesBass; let i = index;"
+          class="staff__note staff__note--bass staff__note--quarter-down"
+          [ngClass]="{'staff__note--silent':           note.length <  0,
+                      'staff__note--quarter-down':     (note.length == 4 && note.pitch > 4),
+                      'staff__note--quarter-up':       (note.length == 4 && note.pitch <= 4),
+                      'staff__note--half-down':        (note.length == 8 && note.pitch > 4),
+                      'staff__note--half-up':          (note.length == 8 && note.pitch <= 4),
+                      'staff__note--half-dotted-down': note.length == 12 }"
+          [ngStyle]="{ 'left': basePosition + note.position + '%',
+                      'top': basePitch    - note.pitch * 0.775 + 'rem' }">
+        </div>
+        <div *ngFor="let measure of numberOfMeasures; let idx = index;"
+              class="staff__measure"
+              [ngStyle]="{ 'left': basePosition + (idx * 16)+ '%' }">
+        </div>
+      </div>
+      <!-- <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 20%"></div>
+      <div class="staff__note staff__note--half-down staff__note--bottom"    style="left: 32%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 44%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 56%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--bottom" style="left: 68%"></div>
+      <div class="staff__note staff__note--quarter-down staff__note--middle" style="left: 80%"></div> -->
     </div>
     <div class="hobby__violin-wrapper"><span class="hobby__violin hobby__bike-title">Kolarstwo</span></div>
     <img class="hobby__upper-image" src="/assets/violin.png" />
