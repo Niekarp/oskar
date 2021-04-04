@@ -33,7 +33,7 @@ export class HobbyComponent {
     this.beatTime,
     3 * this.beatTime
   ];
-  private played = false;
+  public played = false;
 
   public basePitch = 7.7;
   public basePosition = 10;
@@ -254,6 +254,12 @@ export class HobbyComponent {
 
     new Audio("/assets/o4.mp3").play();
 
+    setTimeout(() => {
+      (document.getElementsByClassName("staff__notes-wrapper")[0] as HTMLElement).classList.remove("staff__note-wrapper--moving");
+      (document.getElementsByClassName("staff__notes-wrapper")[1] as HTMLElement).classList.remove("staff__note-wrapper--moving"); 
+      this.played = false
+    }, 30 * 1000);
+
     // let cummTime = 0;
     // for (let i = 0; i < sortedNotesA.length; ++i) {
     //   cummTime += this.notes[i].playTime;
@@ -276,7 +282,7 @@ export class HobbyComponent {
     //   }, cummTime);
     // }
 
-    console.log(this.notes);
+    // console.log(this.notes);
     
     // console.log(sortedNotesA);
     // console.log(sortedNotesB);

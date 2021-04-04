@@ -37,7 +37,7 @@
       <div class="staff__note staff__note--quarter-down staff__note--middle" style="left: 80%"></div> -->
     </div>
     <div class="hobby__composing-wrapper">
-      <fa-icon [icon]="faPlay" (click)="playMusic()" style="font-size: 3rem; padding: 0 1.4rem;"></fa-icon> <span class="hobby__composing">Gram na skrzypcach i komponuje</span>
+      <fa-icon [icon]="faPlay" (click)="playMusic()" [ngClass]="{ 'invisible': played }" style="transition: all 1s; font-size: 3rem; padding: 0 1.4rem;"></fa-icon> <span class="hobby__composing">Gram na skrzypcach i komponuje</span>
     </div>
     <div class="staff__row">
       <div class="staff__line"></div>
