@@ -178,7 +178,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    transition: transform 20s linear;
   }
 
   &__note-wrapper--moving {
@@ -239,6 +238,12 @@
 
   &__note--silent {
     background-image: url("/assets/silent-note.png");
+  }
+
+  &__note--silent-half {
+    background-color: black;
+    height: 0.7rem;
+    transform: translateY(1.4rem);
   }
 
   &__note--top {
