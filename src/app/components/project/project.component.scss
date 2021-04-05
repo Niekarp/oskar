@@ -12,16 +12,63 @@ mat-card {
   // border-radius: 2rem;
   background-color: white;
   color: black;
+  overflow: visible;
   // background-color: rgba(23, 54, 81, 0.5);
+
+  &__img-container {
+    position: relative;
+    transition: all 0.5s;
+  }
+
+  &__img-container:hover {
+    transform: scale(1.3);
+  
+    img {
+      // object-fit: contain;
+      border-radius: 2rem;
+    }
+
+    .project__ball-container{
+      opacity: 1;
+    }
+  }
+
+  &__ball-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    bottom: 1rem;
+    left:  0;
+    right: 0;
+    opacity: 1;
+  }
+
+  &__ball {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px black;
+    background-color: white;
+    cursor: pointer;
+    transition: all 1s;
+  }
+
+  &__ball--selected {
+    background-color: $primary-color;
+  }
 
   &__img {
     width: 100%;
     height: 30rem;
+    position: relative;
     // border-radius: 2rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom: 1px solid white;
     object-fit: cover;
+    cursor: pointer;
+    transition: border-radius 0.5s;
   }
 
   &__header {
@@ -46,5 +93,35 @@ mat-card {
     margin-right: 1rem;
     position: absolute;
     right: 0;
+  }
+
+  &__github {
+    position: absolute;
+    right:  1rem;
+    bottom: 2rem;
+    font-size: 3.5rem;
+    color: black;
+  }
+
+  &__try {
+    position: absolute;
+    bottom: 2.4rem;
+    left: 2rem;
+    border: 1px solid black;
+    transition: background-color 0.5s, color 0.5s;
+  }
+
+  &__try:hover {
+    color: white;
+    background-color: $primary-color;
+    border-color: white;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .project {
+    &__ball-container {
+      opacity: 0;
+    }
   }
 }

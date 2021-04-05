@@ -15,6 +15,7 @@ import { ProjectComponent } from './components/project/project.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MatCardModule } from "@angular/material/card";
     AppRoutingModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

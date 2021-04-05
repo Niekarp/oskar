@@ -3,8 +3,19 @@
     {{ project.title }}
     <img class="project__tech" [src]="'/assets/' + project.tech" />
   </div>
-  <img class="project__img" [src]="project.imgSrc"/>
+  <div class="project__img-container">
+    <img class="project__img" [src]="project.imgSrc[project.imgIdx]" (click)="nextImage()"/>
+    <div class="project__ball-container">
+      <div *ngFor="let src of project.imgSrc; let idx = index" 
+          class="project__ball"
+          [ngClass]="{ 'project__ball--selected': idx == project.imgIdx }"
+          (click)="setImage(idx)">
+      </div>
+    </div>
+  </div>
   <div class="project__desc">
     {{ project.desc }}
   </div>
+  <a href="https://github.com/Niekarp" target="_blank" class="project__github"><fa-icon [icon]="faGithub"></fa-icon></a>
+  <a *ngIf="project.try" mat-stroked-button href="https://www.google.com/" target="_blank" class="project__try">WYPRÓBUJ</a>
 </mat-card>
