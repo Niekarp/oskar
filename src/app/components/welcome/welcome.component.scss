@@ -164,3 +164,32 @@
     }
   }
 }
+
+@media screen and (min-width: 1760px) {
+  .welcome {
+    &__header {
+      font-size: 10rem;
+    }
+
+    &__sub-header {
+      font-size: 4.5rem;
+      margin-bottom: 0rem;
+    }
+
+    &__icons {
+      a {
+        width:  7rem;
+        height: 7rem;
+      }
+
+      fa-icon {
+        height: 4rem;
+        font-size: 4rem;
+      }
+    }
+
+    &__nav-arrow {
+      font-size: 7rem;
+    }
+  }  
+}

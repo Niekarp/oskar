@@ -28,6 +28,9 @@
   }
 
   &__header {
+    // prevent text changes when other elements are animated
+    -webkit-font-smoothing: antialiased;
+
     align-self: flex-start;
     max-width: 50rem;
     padding: 3rem;
@@ -105,7 +108,6 @@
   .projects {
     // grid-template-areas: "p1 line p2";
     // grid-template-columns: 1fr 50px 1fr;
-    // grid-template-columns: repeat(3, 1fr);
 
 
    }
@@ -118,6 +120,8 @@
 
 @media screen and (min-width: 1260px) {
   .projects {
+    grid-template-columns: repeat(3, 1fr);
+    
     &__header {
       grid-column: unset;
       padding: 25.5rem 0 0 3rem;
@@ -131,6 +135,22 @@
 
     &__empty-cell {
       display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1760px) {
+  :host {
+    padding-top: 3rem;
+  }
+
+  .projects {
+    &__header {
+      font-size: 9rem;
+    }
+
+    &__item {
+      max-width: 60rem;
     }
   }
 }

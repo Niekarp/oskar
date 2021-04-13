@@ -441,3 +441,28 @@
   from {transform: translateX(0);}
   to   {transform: translateX(2 * -80%);}
 }
+
+@media screen and (min-width: 1760px) {
+  .hobby {
+    font-size: 6.5rem;
+
+    &__violin {
+      font-size: 6.5rem;
+    }
+
+    &__composing {
+      font-size: 3.7rem;
+    }
+
+    &__upper-image {
+      top: -1rem;
+    }
+
+    &__lower-image {
+      width: 80rem;
+      height: 57rem;
+      top: -12rem;
+      left: -23rem;
+    }
+  }
+}

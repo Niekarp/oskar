@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
 import { faPhone, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
@@ -39,9 +39,14 @@ export class NavbarComponent implements OnInit {
   public hamburgerClicked = false;
   public currentSection: NavItem;
 
-  constructor() { }
+  constructor(public cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+  }
+
+  private ngAfterViewInit() {
+    this.updateCurrentSection();
+    this.cd.detectChanges();
   }
 
   @HostListener('window:scroll', ['$event'])

@@ -235,3 +235,37 @@
     }
   }
 }
+
+@media screen and (min-width: 1760px) {
+  .timeline {
+    &__header {
+      font-size: 3.5rem;
+      margin-left: 2.5rem;
+    }
+
+    &__header-date {
+      font-size: 2.9rem;
+      padding-left: 2.5rem;
+    }
+
+    &__date {
+      left: calc(50% - 4.5rem);;
+      width:  12rem;
+      height: 12rem;
+    }
+
+    &__list {
+      font-size: 3.3rem;
+      margin-left: 1.5rem;
+    }
+
+    &__line::before {
+      height: 12rem;
+      bottom: -12rem;
+    }
+    
+    &__line-date {
+      font-size: 4rem;
+    }
+  }
+}

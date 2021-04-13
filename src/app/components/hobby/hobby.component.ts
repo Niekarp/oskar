@@ -16,6 +16,9 @@ interface Note {
 export class HobbyComponent {
   public faPlay = faPlayCircle;
 
+  private audioContext: AudioContext;
+  private pieceAudioBuffer: AudioBuffer | null = null;
+
   private beatTime = 435;
   private playTimes = [
     0,
@@ -148,6 +151,16 @@ export class HobbyComponent {
   public numberOfMeasures: Array<number>;
 
   constructor(public elRef: ElementRef) {
+    if ('webkitAudioContext' in window) {
+      this.audioContext = new (window as any).webkitAudioContext();
+    } else {
+      this.audioContext = new AudioContext();
+    }
+
+    this.getAudioFile(this.audioContext, "/assets/o4.mp3").then(buffer => {
+      this.pieceAudioBuffer = buffer;
+    });
+
     this.time = 0;
     this.notes[0].position = this.time;
     this.notes[0].playTime = this.beatTime * (this.notes[0].length / 4);
@@ -182,7 +195,7 @@ export class HobbyComponent {
   }
 
   public playMusic(): void {
-    if(this.played) return;
+    if(this.played && this.pieceAudioBuffer) return;
     this.played = true;
     
     let notes = (this.elRef.nativeElement as HTMLElement).getElementsByClassName("staff__note--treble");
@@ -252,7 +265,10 @@ export class HobbyComponent {
     //   // sortedNotes.forEach(note => note.classList.add("staff__note-wrapper--moving"));
     // }, 5000);
 
-    new Audio("/assets/o4.mp3").play();
+    const node  = this.audioContext.createBufferSource();
+    node.buffer = this.pieceAudioBuffer;
+    node.connect(this.audioContext.destination);
+    node.start();
 
     setTimeout(() => {
       (document.getElementsByClassName("staff__notes-wrapper")[0] as HTMLElement).classList.remove("staff__note-wrapper--moving");
@@ -288,4 +304,15 @@ export class HobbyComponent {
     // console.log(sortedNotesB);
   }
 
+  private getAudioFile(audioContext: AudioContext, filepath: string) {
+    return new Promise<AudioBuffer>((resolve, reject) => {
+      fetch(filepath).then(response => {
+        response.arrayBuffer().then(buffer => {
+          audioContext.decodeAudioData(buffer, (ab) => { 
+            resolve(ab); 
+          }, (e) => { reject(e); });    
+        })
+      });
+    });
+  }
 }
