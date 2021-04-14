@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/Niekarp/oskar/compare/v0.3.1...v0.3.2) (2021-04-14)
+
+
+### Features
+
+* **projects:** add project options ([830ed03](https://github.com/Niekarp/oskar/commit/830ed0310b199c820b3bde3e50f01eabec717d15))
+
 ### [0.3.1](///compare/v0.3.0...v0.3.1) (2021-04-04)
 
 
