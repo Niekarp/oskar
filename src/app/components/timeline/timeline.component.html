@@ -1,6 +1,6 @@
 <div class="timeline">
   <div class="timeline__line-container">
-    <div class="timeline__line">
+    <div class="timeline__line" [ngClass]="{ 'full': progress > 99 }">
       <!-- 2011 2013 2016 2020 -->
       <div [ngClass]="{ 'visible': progress > 0 }"  class="timeline__date"></div>
       <div [ngClass]="{ 'visible': progress > 20 }" class="timeline__date"></div>
@@ -17,6 +17,7 @@
       <h3 class="timeline__header-date">2011</h3>
       <ul class="timeline__list">
         <li>urodzilem sie</li>
+        <li>zaprogramowanie kalkulatora konsolowego</li>
       </ul>
     </div> 
     <div class="timeline__xilo" [ngClass]="{ 'visible': progress > 20 }" >
@@ -24,27 +25,34 @@
       <h3 class="timeline__header-date">2013 - 2016</h3>
       <ul class="timeline__list">
         <li>profil mat-fiz</li>
-        <li>matura z informatyki (68%)</li>
+        <li>ułozenie kostki rubika</li>
+        <li>reprezentant klasy w biegach</li>
+        <!-- <li>matura z informatyki (68%)</li> -->
       </ul>
     </div>
     <div class="timeline__pb" [ngClass]="{ 'visible': progress > 50 }" >
       <h2 class="timeline__header">POLITECHNIKA BIAŁOSTOCKA</h2>
       <h3 class="timeline__header-date">2016 - 2020</h3>
       <ul class="timeline__list">
-        <li>Nr. 1 w rankingu studentów(2019)</li>
-        <li>Stypendia rektora</li>
+        <li>brak uwag od nauczycieli</li>
+        <li>kupno kanapki koledze</li>
         <li>5 miejsce w kat. C++ (BTI 2016)</li>
-        <li>Praca inzynierska zakończona artykułem naukowym</li>
-        <li>Studia ukończone z oceną bardzo dobrą</li>
+        <li>okielznanie druta</li>
+        <li>studia ukonczone bez spania</li>
+        <!-- <li>Nr. 1 w rankingu studentów(2019)</li> -->
+        <!-- <li>Stypendia rektora</li> -->
+        <!-- <li>Praca inzynierska zakończona artykułem naukowym</li> -->
+        <!-- <li>Studia ukończone z oceną bardzo dobrą</li> -->
       </ul>
     </div> 
     <div class="timeline__finish" [ngClass]="{ 'visible': progress > 90 }" >
       <h2 class="timeline__header">FREELANCER</h2>
       <h3 class="timeline__header-date">2020 - obecnie</h3>
       <ul class="timeline__list">
-        <li>Korepetycje</li>
-        <li>Wordpress</li>
-        <li>Specjalizacja</li>
+        <li>Korepetycje z C</li>
+        <li>Salon paznokcia</li>
+        <!-- <li>Wordpress</li> -->
+        <!-- <li>Specjalizacja</li> -->
       </ul>
     </div> 
   </div>

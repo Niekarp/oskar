@@ -111,6 +111,12 @@
     bottom: -3rem;
     height: 3rem;
     border-right: 5px dotted $primary-color;
+    opacity: 0;
+    transition: opacity 2s;
+  }
+
+  &__line.full::before {
+    opacity: 1;
   }
 
   &__list {
