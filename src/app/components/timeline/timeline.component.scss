@@ -31,22 +31,22 @@
   }
 
   &__date:nth-child(1) {
-    background-image: url("/assets/stairs-logo.png");
+    background-image: url("~/assets/stairs-logo.png");
     top: 0%;
   }
   &__date:nth-child(2) {
     top: 20%;
-    background-image: url("/assets/xilo-logo.jpg");
+    background-image: url("~/assets/xilo-logo.jpg");
     background-size: cover;
     border-radius: 50%
   }
   &__date:nth-child(3) {
     top: 50%;
-    background-image: url("/assets/pb-logo.png");
+    background-image: url("~/assets/pb-logo.png");
   }
   &__date:nth-child(4) {
     top: 90%;
-    background-image: url("/assets/laptop-logo.png");
+    background-image: url("~/assets/laptop-logo.png");
   }
 
   &__line-cover {

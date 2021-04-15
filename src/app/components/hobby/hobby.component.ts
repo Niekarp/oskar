@@ -157,7 +157,7 @@ export class HobbyComponent {
       this.audioContext = new AudioContext();
     }
 
-    this.getAudioFile(this.audioContext, "/assets/o4.mp3").then(buffer => {
+    this.getAudioFile(this.audioContext, "./assets/o4.mp3").then(buffer => {
       this.pieceAudioBuffer = buffer;
     });
 

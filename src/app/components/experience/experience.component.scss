@@ -19,7 +19,7 @@
   // background-color: beige;
 
   &__background {
-    background-image: url("/assets/oskar-vert.png");
+    background-image: url("~/assets/oskar-vert.png");
     background-size:   cover;
     background-repeat: no-repeat;
     background-position-x: calc(50% - 30rem);
@@ -61,6 +61,6 @@
 
 @media screen and (min-width: 1760px) {
   .experience {
-    
+
   }
 }

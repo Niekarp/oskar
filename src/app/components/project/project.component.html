@@ -1,7 +1,7 @@
 <mat-card class="project">
   <div class="project__header">
     {{ project.title }}
-    <img class="project__tech" [src]="'/assets/' + project.tech" />
+    <img class="project__tech" [src]="'./assets/' + project.tech" />
   </div>
   <div class="project__img-container">
     <img class="project__img" [src]="project.imgSrc[project.imgIdx]" (click)="nextImage()"/>

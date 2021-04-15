@@ -108,7 +108,7 @@
   &__bike {
     flex: 1;
     position: relative;
-    background-image: url("/assets/map.png");
+    background-image: url("~/assets/map.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -213,31 +213,31 @@
   }
 
   &__note--quarter-up {
-    background-image: url("/assets/quarter-note-up.png");
+    background-image: url("~/assets/quarter-note-up.png");
     transform: translateY(-73%)
   }
 
   &__note--quarter-down {
-    background-image: url("/assets/quarter-note-down.png");
+    background-image: url("~/assets/quarter-note-down.png");
     // top: 100%;
   }
 
   &__note--half-up {
-    background-image: url("/assets/half-note-up.png");
+    background-image: url("~/assets/half-note-up.png");
     transform: translateY(-72%);
   }
 
   &__note--half-down {
-    background-image: url("/assets/half-note-down.png");
+    background-image: url("~/assets/half-note-down.png");
     top: 100%;
   }
 
   &__note--half-dotted-down {
-    background-image: url("/assets/half-note-dotted-down.png");
+    background-image: url("~/assets/half-note-dotted-down.png");
   }
 
   &__note--silent {
-    background-image: url("/assets/silent-note.png");
+    background-image: url("~/assets/silent-note.png");
   }
 
   &__note--silent-half {
@@ -277,11 +277,11 @@
     z-index: 101;
 
     &--treble {
-      background-image: url("/assets/treble-clef.png"); 
+      background-image: url("~/assets/treble-clef.png"); 
     }
 
     &--bass {
-      background-image: url("/assets/bass-clef.png");
+      background-image: url("~/assets/bass-clef.png");
       background-size: contain;
       background-repeat: no-repeat;
       height: 60%;
