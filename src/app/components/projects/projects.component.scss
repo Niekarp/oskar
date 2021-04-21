@@ -4,6 +4,7 @@
   // background: linear-gradient(90deg, #a2cdf0 0%, #285c8b 100%);
   // background-color: #4899df;
   position: relative;
+  padding-top: 3rem;
 }
 :host.off {
   background-color: rgb(23, 54, 81);
@@ -99,7 +100,7 @@
     }
 
     &__background {
-      background-position-y: -1rem;
+      // background-position-y: -1rem;
     }
   }
 }

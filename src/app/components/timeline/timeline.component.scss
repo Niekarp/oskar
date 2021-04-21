@@ -77,6 +77,7 @@
     // left: calc(50% - 3rem);
     border-right: 5px dotted;
     font-size: 3rem;
+    padding-right: 0.7rem;
     color: $primary-color;
     z-index: 9999;
     // border-radius: 0 0 50%;
@@ -121,10 +122,11 @@
 
   &__list {
     font-size: 2rem;
+    font-weight: lighter;
     background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255,255,255,0.6116421568627452) 50%, rgba(255,255,255,0) 100%);
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -211,7 +213,7 @@
     }
 
     &__list {
-      font-size: 3rem;
+      font-size: 2.4rem;
     }
 
     &__line {
@@ -238,6 +240,7 @@
 
     &__list {
       background: unset;
+      padding-left: 4.3rem;
     }
   }
 }
@@ -261,7 +264,7 @@
     }
 
     &__list {
-      font-size: 3.3rem;
+      font-size: 3rem;
       margin-left: 1.5rem;
     }
 

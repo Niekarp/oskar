@@ -105,6 +105,7 @@ export class NavbarComponent implements OnInit {
     this.config.slice().reverse().every(navBreakpoint => { 
       if (currentScroll > navBreakpoint.offsetTarget()) {
         this.currentSection = navBreakpoint;
+        this.targetReached.emit(this.currentSection);
         return false;
       }
       return true;

@@ -2,6 +2,10 @@
 
 :host.off {
   background-color: rgb(23, 54, 81);
+
+  .staff__hider {
+    background-color: rgb(23, 54, 81);
+  }
 }
 
 .hobby {
@@ -81,6 +85,23 @@
     border-radius: 0 1rem 1rem 0;
     // border-left: 12px dotted black;
     // margin-left: 2rem;
+    font-weight: lighter;
+  }
+
+  &__play {
+    padding: 0 1.4rem;
+    font-size: 3rem;
+    color: black;
+    cursor: pointer;
+    transition: all 1s, color 0.3s;
+    animation-name: playColorChange;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+
+  &__play:hover {
+    animation: unset;
+    color: #4899df;
   }
 
   &__composing:hover {
@@ -311,6 +332,7 @@
     top:  0;
     background-color: white;
     z-index: 100;
+    transition: background-color 1s;
 
     &--left {
       width: 20%;
@@ -466,3 +488,10 @@
     }
   }
 }
+
+@keyframes playColorChange {
+  10%   { color: black; }
+  20%   { color: white; }
+  30%   { color: black; }
+  100%  { color: black; }
+} 

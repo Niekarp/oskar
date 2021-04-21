@@ -13,6 +13,7 @@
 
   &__logo {
     color: $primary-color;
+    letter-spacing: 1px;
     transition: opacity 0.5s;
   }
 
@@ -69,6 +70,8 @@
   
     list-style: none;
     font-size: 4rem;
+    letter-spacing: 1px;
+    font-weight: lighter;
     // background-color: rgb(72, 153, 223);
     background-color: rgba(72, 153, 223, 0.6);
 
