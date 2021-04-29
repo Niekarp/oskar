@@ -17,62 +17,128 @@ export class ProjectsComponent implements OnInit {
     // use capital letters for titles
     this.projects = [
       {
-        imgSrc: ["./assets/binpoll.png", "./assets/football.png", "./assets/binpoll.png", "./assets/football.png", "./assets/binpoll.png", "./assets/football.png"],
+        imgSrc: [
+          "./assets/binpoll-1.png",
+          "./assets/binpoll-2.png",
+          "./assets/binpoll-3.png",
+          "./assets/binpoll-4.png",
+          "./assets/binpoll-5.png",
+          "./assets/binpoll-6.png",
+          "./assets/binpoll-7.png",
+          "./assets/binpoll-8.png",
+          "./assets/binpoll-9.png",
+          "./assets/binpoll-10.png",
+       ],
         imgIdx: 0,
         title: "BINPOLL",
         tech: Tech.Angular,
-        desc: "Web application to conduct an acoustic scenes recognition poll. Participants are presented with binaural recordings and their task is to match them with acoustic scenes they represent.",
+        desc: 
+        `Internetowy test klasyfikacji scen akustycznych. 
+        Uczestnicy podejmują decyzje sluchajac nagran binauralnych.
+        Wykorzystany do zebrania probek w miedzynarodowym badaniu.`,
         try: "google.pl"
       },
       {
-        imgSrc: ["./assets/football.png"],
+        title: "Oskar",
+        imgSrc: [
+          "./assets/oskar-1.png",
+          "./assets/oskar-2.png",
+        ],
         imgIdx: 0,
-        title: "Football",
-        tech: Tech.React,
-        desc: "Web application displaying football match statistics and predicting winning chances of each team.",
+        tech: Tech.Angular,
+        desc: "Strona na ktorej wlasnie sie znajdujesz. Moja internetowa wizytowka.",
       },
       {
-        imgSrc: ["./assets/julik.png", "./assets/julik-2.png", "./assets/julik-3.png", "./assets/julik-4.png"],
         imgIdx: 0,
         title: "Julik",
+        imgSrc: [
+          "./assets/julik-1.png",
+          "./assets/julik-2.png",
+          "./assets/julik-3.png",
+          "./assets/julik-4.png",
+          "./assets/julik-5.png",
+          "./assets/julik-6.png",
+          "./assets/julik-7.png",
+          "./assets/julik-8.png",
+          "./assets/julik-9.png",
+          "./assets/julik-10.png",
+        ],
         tech: Tech.Vue,
-        desc: "Web application that is an online information center and a business card of a dog called Julik.",
+        desc: 
+        `Strona internetowa o psie Juliku. Zawiera ukryty katalog utworów muzycznych.`,
         try: "google.pl"
       },
       {
-        imgSrc: ["./assets/ankiety.png"],
-        imgIdx: 0,
         title: "Ankiety",
+        imgSrc: [
+          "./assets/ankiety-1.png",
+          "./assets/ankiety-2.png",
+          "./assets/ankiety-3.png",
+          "./assets/ankiety-4.png",
+          "./assets/ankiety-5.png",
+          "./assets/ankiety-6.png",
+          "./assets/ankiety-7.png",
+        ],
+        imgIdx: 0,
         tech: Tech.Angular,
-        desc: "Web application concerning online surveys",
+        desc:
+        `Platforma do przygotowywania, wypelniania i wyszukiwania ankiet internetowych. 
+        Zawiera kreator ankiety obslugujacy kilka rodzajow pytan, w tym pytania warunkowe.`,
       },
       {
-        imgSrc: ["./assets/game.jpg"],
-        imgIdx: 0,
-        title: "Phaser game",
-        tech: Tech.Phaser ,
-        desc: "You live in an dry aquarium. One day someone bad decided to droop unscrewed hydrants into your home. The water level started to get higher and higher releasing deadly octopuses on its way.",
-      },
-      {
-        imgSrc: ["./assets/sops.jpg"],
-        imgIdx: 0,
         title: "SOPS",
+        imgSrc: [
+          "./assets/sops-1.jpg",
+          "./assets/sops-2.jpg",
+          "./assets/sops-3.jpg",
+          "./assets/sops-4.jpg",
+          "./assets/sops-5.jpg",
+          "./assets/sops-6.jpg",
+          "./assets/sops-7.jpg",
+        ],
+        imgIdx: 0,
         tech: Tech.Angular,
-        desc: "Web application for companies to register their products and generate QR codes for them.",
+        desc: 
+        `Platforma do rejestracji i generowania kodow QR produktow sporzywczych. 
+        Pelni takze funkcje portalu do oceny i zdobycia informacji o produktach.`
       },
       {
-        imgSrc: ["./assets/game.jpg"],
+        title: "Football",
         imgIdx: 0,
+        imgSrc: ["./assets/football-1.png", "./assets/football-2.png"],
+        tech: Tech.React,
+        desc:
+        `Aplikacja pokazujaca na biezaco statystyki meczu pilkarskiego. 
+        Przewiduje ona szanse wygranej kazdej z druzyn.`,
+      },
+      {
+        title: "Paznokieć",
+        imgSrc: [
+          "./assets/nail-1.png"
+        ],
+        imgIdx: 0,
+        tech: Tech.Wordpress,
+        desc: 
+        `Strona salonu pieknosci z Warszawy. Dotyczy kursu stylizacji paznokci.`,
+      },
+      {
         title: "Phaser game",
-        tech: Tech.Phaser ,
-        desc: "You live in an dry aquarium. One day someone bad decided to droop unscrewed hydrants into your home. The water level started to get higher and higher releasing deadly octopuses on its way.",
-      },
-      {
-        imgSrc: ["./assets/sops.jpg"],
+        imgSrc: [
+          "./assets/game-1.jpg",
+          "./assets/game-2.jpg",
+          "./assets/game-3.jpg",
+          "./assets/game-4.jpg",
+          "./assets/game-5.jpg",
+          "./assets/game-6.jpg",
+          "./assets/game-7.jpg",
+          "./assets/game-8.jpg",
+          "./assets/game-9.jpg",
+        ],
         imgIdx: 0,
-        title: "SOPS",
-        tech: Tech.Angular,
-        desc: "Web application for companies to register their products and generate QR codes for them.",
+        tech: Tech.Phaser ,
+        desc: 
+        `Przegladarkowa gra w korej celem jest zakrecenie hydrantow zanim woda zaleje akwarium. 
+        Poza woda zagrozneiem sa osmiornice i wszechobecna ciemnosc.`
       },
     ];
   }

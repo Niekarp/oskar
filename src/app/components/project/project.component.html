@@ -3,8 +3,35 @@
     {{ project.title }}
     <img class="project__tech" [src]="'./assets/' + project.tech" />
   </div>
-  <div class="project__img-container">
-    <img class="project__img" [src]="project.imgSrc[project.imgIdx]" (click)="nextImage()"/>
+  <div class="project__img-container-replacer" [ngStyle]="{ 'display': fullScreenOn ? 'block' : 'none' }">
+  </div>
+  <div class="project__img-container" [ngClass]="{ 'project__img-container--full': fullScreenOn }" (click)="checkAndExitIfFullscreen($event)">
+    <div class="project__img-background"></div>
+    <img class="project__img" *ngFor="let imgSrc of project.imgSrc; let idx = index;" 
+         [ngClass]="{ 'visible': idx === project.imgIdx }"
+         [src]="imgSrc" 
+         (click)="nextImage()"/>
+    
+    <div class="project__expand" (click)="toggleFullscreen()">
+
+      <div *ngIf="fullScreenOn; then exit else expand"></div>
+
+      <ng-template #exit>
+        <fa-icon [icon]="faTimesCircle"></fa-icon>
+      </ng-template>
+
+      <ng-template #expand>
+        <fa-icon [icon]="faExpand"></fa-icon>
+      </ng-template>
+
+    </div>
+
+    <div class="project__arrow project__arrow--left">
+      <fa-icon [icon]="faChevronDown" (click)="prevImage()"></fa-icon>
+    </div>
+    <div class="project__arrow project__arrow--right">
+      <fa-icon [icon]="faChevronDown" (click)="nextImage()"></fa-icon>
+    </div>
     <div class="project__ball-container">
       <div *ngFor="let src of project.imgSrc; let idx = index" 
           class="project__ball"
@@ -15,7 +42,10 @@
   </div>
   <div class="project__desc">
     {{ project.desc }}
+    <div class="project__links">
+      <a *ngIf="project.try" mat-stroked-button href="https://www.google.com/" target="_blank" class="project__try">WYPRÓBUJ</a>
+      <a href="https://github.com/Niekarp" target="_blank" class="project__github"><fa-icon [icon]="faGithub"></fa-icon></a>
+    </div>
   </div>
-  <a href="https://github.com/Niekarp" target="_blank" class="project__github"><fa-icon [icon]="faGithub"></fa-icon></a>
-  <a *ngIf="project.try" mat-stroked-button href="https://www.google.com/" target="_blank" class="project__try">WYPRÓBUJ</a>
 </mat-card>
+<!-- 'project__img--current': idx === project.imgIdx } -->

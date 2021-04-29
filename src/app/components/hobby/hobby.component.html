@@ -23,7 +23,7 @@
                       'staff__note--half-up':          (note.length == 8 && note.pitch <= 4),
                       'staff__note--half-dotted-down': note.length == 12 }"
           [ngStyle]="{ 'left': basePosition + note.position + '%',
-                      'top': basePitch    - note.pitch * 0.775 + 'rem' }">
+                      'top': basePitch    - note.pitch * 0.775 + (note.pitch <= 4 ? (-3.4) : 0) + 'rem' }">
         </div>
         <div *ngFor="let measure of numberOfMeasures; let idx = index;"
               class="staff__measure"
@@ -62,7 +62,7 @@
                       'staff__note--half-up':          (note.length == 8 && note.pitch <= 4),
                       'staff__note--half-dotted-down': note.length == 12 }"
           [ngStyle]="{ 'left': basePosition + note.position + '%',
-                      'top': basePitch    - note.pitch * 0.775 + 'rem' }">
+                      'top': basePitch    - note.pitch * 0.775 + (note.pitch <= 4 ? (-3.4) : 0) + 'rem' }">
         </div>
         <div *ngFor="let measure of numberOfMeasures; let idx = index;"
               class="staff__measure"

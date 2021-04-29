@@ -46,6 +46,8 @@ export class AppComponent {
 
     this.highlightBackground(this.navbarConfig[0]);
 
+
+
     this.cd.detectChanges();
   }
 

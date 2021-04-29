@@ -30,14 +30,14 @@
 
   &__music-title {
     // margin-top: 2rem;
-    margin: 5rem 0 2rem 0;
+    margin: 7rem 0 2rem 0;
     text-shadow: -2px 0px 1px black, 0px 2px 1px black, 2px 0px 1px black, 0px -2px 1px black;
     color: white;
   }
 
   &__upper-image {
     position: absolute;
-    top: 0.3rem;
+    top: 0.6rem;
     right: -6rem;
     opacity: 0.4;
     max-height: 80%;
@@ -219,7 +219,9 @@
     position: absolute;
     top: 7.7rem;
     left: 10%;
+    border-radius: 4px;
     z-index: 1;
+    // transition: background-color 0.2s;
   }
 
   &__note--treble {
@@ -230,12 +232,16 @@
   }
 
   &__note--playing {
-    background-color: $primary-color;
+    // background-color: #8cc5f5;
+    animation-name: noteJump;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
   }
 
   &__note--quarter-up {
     background-image: url("~/assets/quarter-note-up.png");
-    transform: translateY(-73%)
+    // transform: translateY(-73%)
   }
 
   &__note--quarter-down {
@@ -245,7 +251,7 @@
 
   &__note--half-up {
     background-image: url("~/assets/half-note-up.png");
-    transform: translateY(-72%);
+    // transform: translateY(-72%);
   }
 
   &__note--half-down {
@@ -362,6 +368,7 @@
 
     &__upper-image {
       right: 4rem;
+      top: 0.4rem;
       opacity: 0.8;
     }
 
@@ -495,3 +502,9 @@
   30%   { color: black; }
   100%  { color: black; }
 } 
+
+@keyframes noteJump {
+  0%   { transform: translateY(0); background-color: white; }
+  50%  { transform: translateY(-1rem); background-color: #8cc5f5;}
+  100% { transform: translateY(0); background-color: #8cc5f5;}
+}

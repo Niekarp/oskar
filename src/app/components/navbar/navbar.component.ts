@@ -16,7 +16,7 @@ export interface NavItem {
   animations: [
     trigger('blurUnblur', [
       state('blur', style({ filter: 'blur(2rem)' })),
-      state('unblur', style({ filter: 'blur(0rem)' })),
+      state('unblur', style({ filter: 'unset' })),
       transition('blur <=> unblur', [ animate('0.3s') ]),
     ]),
   ],
@@ -38,6 +38,10 @@ export class NavbarComponent implements OnInit {
   public navbarTitleBlurred = false;
   public hamburgerClicked = false;
   public currentSection: NavItem;
+  
+  public navbarBackgroundShown = false;
+
+  private projectsElement: HTMLElement;
 
   constructor(public cd: ChangeDetectorRef) { }
 
@@ -45,12 +49,17 @@ export class NavbarComponent implements OnInit {
   }
 
   private ngAfterViewInit() {
+    this.projectsElement = (document.getElementsByClassName("projects").item(0) as HTMLElement);
     this.updateCurrentSection();
     this.cd.detectChanges();
   }
 
   @HostListener('window:scroll', ['$event'])
   private updateOnScroll() {
+    if (this.projectsElement.classList.contains("fullscreen")) {
+      return;
+    }
+    
     this.updateCurrentSection();
 
     const currentScroll = window.pageYOffset;
@@ -67,16 +76,22 @@ export class NavbarComponent implements OnInit {
       this.targetReached.emit(this.config.find(item => item.navName === this.pendingNavbarTitle));
       this.navbarTitleBlurred = true;
     }
+
+    if (!this.navbarBackgroundShown) {
+      if (currentScroll > this.config[1].offsetTarget() && window.innerWidth < 768) {
+        this.navbarBackgroundShown = true;
+      }
+    }
   }
 
   public onHamburgerClick() {
     if (!this.hamburgerClicked) {
       window.document.documentElement.style.overflowY = "hidden";
-      this.updateCurrentSection();
-      (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "blur(2rem)"
+      // this.updateCurrentSection();
+      // (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "blur(1rem) saturate(0%)"
     } else {
       window.document.documentElement.style.overflowY = "unset";
-      (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "unset"
+      // (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "unset"
     }
 
     this.hamburgerClicked = !this.hamburgerClicked;

@@ -4,7 +4,7 @@
   // background: linear-gradient(90deg, #a2cdf0 0%, #285c8b 100%);
   // background-color: #4899df;
   position: relative;
-  padding-top: 3rem;
+  padding-top: 5rem;
 }
 :host.off {
   background-color: rgb(23, 54, 81);
@@ -15,9 +15,15 @@
   // grid-template-rows: repeat(6, 50vh);
   // grid-template-columns: 100%;
   grid-template-columns: repeat(auto-fill, minmax(37rem, 1fr));
+  grid-template-rows: 21rem repeat(8, 1fr);
   justify-items: center;
   align-items: baseline;
   // gap: 2rem;
+
+  &.fullscreen {
+    transition: unset !important;
+    filter: unset !important;
+  }
 
   &__background {
     background-image: url("~/assets/computers.png");
@@ -39,7 +45,7 @@
     color: $primary-color;
     word-spacing: 100vw;
 
-    padding: 6rem 3rem 0rem 3rem;
+    padding: 6rem 3rem 3rem 3rem;
     display: flex;
 
     h1 {
@@ -58,12 +64,14 @@
 
   &__item {
     width: 100%;
+    height: 100%;
     max-width: 50rem;
+    min-height: 60rem;
     padding: 3rem;
   }
 
   &__item:first-of-type {
-    padding-top: 6rem;
+    // padding-top: 6rem;
   }
 
   &__empty-cell {
@@ -95,6 +103,8 @@
 
 @media screen and (min-width: 840px) {
   .projects {
+    grid-template-rows: 21rem repeat(4, 1fr);
+
     &__empty-cell {
       display: block;
     }
@@ -122,10 +132,11 @@
 @media screen and (min-width: 1260px) {
   .projects {
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows:    repeat(3, 1fr);
     
     &__header {
       grid-column: unset;
-      padding: 25.5rem 0 0 3rem;
+      padding: 22.5rem 0 0 3rem;
       justify-self: initial;
 
       h1 {

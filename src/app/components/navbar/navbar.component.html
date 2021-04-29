@@ -1,7 +1,7 @@
-<div class="navbar" [ngClass]="{ 'navbar--hamburger-open': hamburgerClicked }">
+<div class="navbar" [ngClass]="{ 'navbar--hamburger-open': hamburgerClicked, 'navbar--mobile-background': navbarBackgroundShown }">
   <div class="navbar__logo" [@blurUnblur]="navbarTitleBlurred ? 'blur' : 'unblur'" (@blurUnblur.done)="changeDisplayedTitle($event)">{{ navbarTitle }}</div>
   <ul  class="navbar__links">
-    <li *ngFor="let navItem of config" (click)="navigateTo(navItem.elementTarget)" [ngClass]="{ 'navbar__link--active': navItem === currentSection }">
+    <li *ngFor="let navItem of config; let idx = index" (click)="navigateTo(navItem.elementTarget)" [ngClass]="{ 'navbar__link--active': navItem === currentSection }" [ngStyle]="{ 'transition': 'opacity ' + (idx + 1) + 's' }">
       <fa-icon class="" [icon]="navItem.icon"></fa-icon> {{ navItem.navName }}
     </li>
   </ul>
