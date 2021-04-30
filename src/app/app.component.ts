@@ -36,7 +36,7 @@ export class AppComponent {
     ];
 
     const contactOffsetTarget = () => 
-      0;
+      -1;
     const experienceOffsetTarget = () => 
       ((this.cmpWelcome.elRef.nativeElement  as HTMLElement).clientHeight / 2);
     const projectsOffsetTarget = () => 
