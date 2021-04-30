@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "breakpoints.scss";
 
 :host {
   position: relative;
@@ -69,19 +70,19 @@
   }
 } 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: $mobile-breakpoint) {
   .projects {
     overflow: hidden;
   }
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: $grid-single-column-breakpoint) {
   .projects {
     grid-template-columns: repeat(auto-fill, minmax(42rem, 1fr));
   }
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: $grid-double-column-breakpoint) {
   .projects {
     grid-template-rows: 21rem repeat(4, 1fr);
 
@@ -91,14 +92,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .line {
-    grid-area: line;
-    background-color: red;
-  }
-}
-
-@media screen and (min-width: 1260px) {
+@media screen and (min-width: $grid-triple-column-breakpoint) {
   .projects {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows:    repeat(3, 1fr);
@@ -120,7 +114,7 @@
   }
 }
 
-@media screen and (min-width: 1760px) {
+@media screen and (min-width: $desktop-wide-breakpoint) {
   :host {
     padding-top: 3rem;
   }

@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "breakpoints.scss";
 
 :host {
   overflow: hidden;
@@ -106,7 +107,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $desktop-small-breakpoint) {
   .welcome {
     &__background {
       background-position-x: -18rem;
@@ -150,7 +151,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop-normal-breakpoint) {
   .welcome {
     &__container {
       padding-right: 17rem;
@@ -158,7 +159,7 @@
   }
 }
 
-@media screen and (min-width: 1760px) {
+@media screen and (min-width: $desktop-wide-breakpoint) {
   .welcome {
     &__header {
       font-size: 10rem;

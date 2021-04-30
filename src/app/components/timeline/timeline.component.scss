@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "breakpoints.scss";
 
 .timeline {
   display: grid;
@@ -171,7 +172,7 @@
   }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: $mobile-breakpoint) {
   .timeline {
     &__header {
       font-size: 2rem;
@@ -179,7 +180,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $desktop-small-breakpoint) {
   .timeline {
     grid-template-columns: 15% 85%;
 
@@ -223,7 +224,7 @@
   }
 }
 
-@media screen and (min-width: 1760px) {
+@media screen and (min-width: $desktop-wide-breakpoint) {
   .timeline {
     &__header {
       font-size: 3.5rem;

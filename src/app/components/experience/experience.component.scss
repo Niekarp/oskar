@@ -1,4 +1,5 @@
 @import"colors.scss";
+@import "breakpoints.scss";
 
 :host {
   padding-top: 3rem;
@@ -25,19 +26,12 @@
 
   &__tech {
     position: sticky;
-    display: scrol;
     display: block;
     bottom: 0;
   }
 }
 
-@media screen and (min-width: 768px) {
-  :host {
-    background-position: center;    
-  }
-}
-
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop-normal-breakpoint) {
   .experience {
     &__background {
       background-position: center;

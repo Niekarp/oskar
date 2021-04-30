@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "breakpoints.scss";
 
 :host.off {
   background-color: $primary-color-dark;
@@ -313,7 +314,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $desktop-small-breakpoint) {
   .hobby {
     &__bike {
       background-position-y: calc(50% - 2rem);
@@ -362,7 +363,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop-normal-breakpoint) {
   .hobby {
     font-size: 5rem;
 
@@ -426,7 +427,7 @@
   to   {transform: translateX(2 * -80%);}
 }
 
-@media screen and (min-width: 1760px) {
+@media screen and (min-width: $desktop-wide-breakpoint) {
   .hobby {
     font-size: 6.5rem;
 

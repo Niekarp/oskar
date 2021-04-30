@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "breakpoints.scss";
 
 .navbar {
   display: flex;
@@ -132,7 +133,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $desktop-small-breakpoint) {
   .navbar {   
     background-color: unset;
     box-shadow: unset;
@@ -185,7 +186,7 @@
   }
 }
 
-@media screen and (min-width: 1760px) {
+@media screen and (min-width: $desktop-wide-breakpoint) {
   .navbar {
     &__links {
       font-size: 3rem; 

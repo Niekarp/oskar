@@ -1,4 +1,5 @@
 @import "colors.scss";
+@import "breakpoints.scss";
 
 mat-card {
   overflow: hidden;
@@ -280,7 +281,7 @@ mat-card {
   }
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: $grid-double-column-breakpoint) {
   .project {
     &__ball-container {
       opacity: 0;
@@ -320,7 +321,7 @@ mat-card {
   }
 }
 
-@media screen and (min-width: 1760px) {
+@media screen and (min-width: $desktop-wide-breakpoint) {
   .project {
     &__header {
       font-size: 3.5rem;
