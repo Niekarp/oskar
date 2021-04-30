@@ -11,7 +11,6 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 export class WelcomeComponent implements OnInit {
   @ViewChild("background")
   public backgroundRef: ElementRef;
-  // public elRef: ElementRef;
 
   private rgb = [70, 10, 50];
   private colorDirection = [true, true, true];
@@ -25,13 +24,6 @@ export class WelcomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  ngAfterViewInit() {
-    // fuj
-    // setTimeout(() => {
-    //   (this.backgroundRef.nativeElement as HTMLElement).classList.add("welcome__background--active");
-    // }, 1000);
   }
 
   public navigateToSectionBottom() {

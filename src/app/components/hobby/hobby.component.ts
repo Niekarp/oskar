@@ -40,7 +40,6 @@ export class HobbyComponent {
 
   public basePitch = 7.7;
   public basePosition = 10;
-  // public baseMeasureLength = 30;
 
   public notes: Array<Note> = [
     { pitch: 8, length: 8,  position: 0, playTime: 0 },
@@ -190,8 +189,6 @@ export class HobbyComponent {
 
     this.numberOfMeasures = new Array(Math.floor((this.time + this.notes[this.notes.length - 1].length) / 16)).fill(0);
     this.numberOfMeasures.push(0);
-    // console.log("there are ", this.numberOfMeasures);
-    
   }
 
   public playMusic(): void {
@@ -214,18 +211,6 @@ export class HobbyComponent {
 
       return ( aNum < bNum ) ? -1 : 1;
     }); 
-    // console.log(sortedNotes);
-    
-
-    // const sortedNotesA = Array.from(notes).slice(0, 6).sort((a, b) => {
-    //   return ((a as HTMLElement).style.left < (b as HTMLElement).style.left) ? -1 : 1;
-    // });
-    // const sortedNotesB = Array.from(notes).slice(6).sort((a, b) => {
-    //   return ((a as HTMLElement).style.left < (b as HTMLElement).style.left) ? -1 : 1;
-    // });
-
-    // console.log(sortedNotes);
-    
 
     let cummTime = 0;
     for (let i = 0; i < sortedNotesTreble.length; ++i) {
@@ -244,8 +229,6 @@ export class HobbyComponent {
     cummTime = 0;
     for (let i = 0; i < sortedNotesBass.length; ++i) {
       if (this.notesBass[i].length > 0) {
-        // console.log(this.notes[i].length);
-        
         setTimeout(() => {
           sortedNotesBass.forEach(note => note.classList.remove("staff__note--playing"));
 
@@ -255,15 +238,8 @@ export class HobbyComponent {
       cummTime += this.notesBass[i].playTime;
     }
 
-    // 221.5px
-
     (document.getElementsByClassName("staff__notes-wrapper")[0] as HTMLElement).classList.add("staff__note-wrapper--moving");
     (document.getElementsByClassName("staff__notes-wrapper")[1] as HTMLElement).classList.add("staff__note-wrapper--moving");
-    // setTimeout(() => {
-    //   (document.getElementsByClassName("staff__notes-wrapper")[0] as HTMLElement).classList.add("staff__note-wrapper--moving");
-    //   (document.getElementsByClassName("staff__notes-wrapper")[1] as HTMLElement).classList.add("staff__note-wrapper--moving");
-    //   // sortedNotes.forEach(note => note.classList.add("staff__note-wrapper--moving"));
-    // }, 5000);
 
     const node  = this.audioContext.createBufferSource();
     node.buffer = this.pieceAudioBuffer;
@@ -275,33 +251,6 @@ export class HobbyComponent {
       (document.getElementsByClassName("staff__notes-wrapper")[1] as HTMLElement).classList.remove("staff__note-wrapper--moving"); 
       this.played = false
     }, 30 * 1000);
-
-    // let cummTime = 0;
-    // for (let i = 0; i < sortedNotesA.length; ++i) {
-    //   cummTime += this.notes[i].playTime;
-
-    //   setTimeout(() => {
-    //     sortedNotesA.forEach(note => note.classList.remove("staff__note--playing"));
-
-    //     (sortedNotesA[i] as HTMLElement).classList.add("staff__note--playing");
-    //   }, cummTime);
-    // }
-
-    // for (let i = 0; i < sortedNotesB.length; ++i) {
-    //   cummTime += this.playTimes[6 + i];
-
-    //   setTimeout(() => {
-    //     sortedNotesA.forEach(note => note.classList.remove("staff__note--playing"));
-    //     sortedNotesB.forEach(note => note.classList.remove("staff__note--playing"));
-
-    //     (sortedNotesB[i] as HTMLElement).classList.add("staff__note--playing");
-    //   }, cummTime);
-    // }
-
-    // console.log(this.notes);
-    
-    // console.log(sortedNotesA);
-    // console.log(sortedNotesB);
   }
 
   private getAudioFile(audioContext: AudioContext, filepath: string) {

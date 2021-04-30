@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faAngular, faVuejs, faWordpressSimple } from "@fortawesome/free-brands-svg-icons";
 import { faEgg } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -8,9 +7,6 @@ import { faEgg } from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./tech.component.scss']
 })
 export class TechComponent implements OnInit {
-  // public faAngular = faAngular;
-  // public faVuejs = faVuejs;
-  // public faWordpressSimple = faWordpressSimple;
   @Input()
   public timelineProgress: number;
 

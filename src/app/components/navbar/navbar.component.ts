@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
-import { faPhone, IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 
 export interface NavItem {
   navName: string,
@@ -15,7 +15,7 @@ export interface NavItem {
   styleUrls: ['./navbar.component.scss'],
   animations: [
     trigger('blurUnblur', [
-      state('blur', style({ filter: 'blur(2rem)' })),
+      state('blur',   style({ filter: 'blur(2rem)' })),
       state('unblur', style({ filter: 'unset' })),
       transition('blur <=> unblur', [ animate('0.3s') ]),
     ]),
@@ -31,11 +31,10 @@ export class NavbarComponent implements OnInit {
   @ViewChild("hamburger")
   public hamburgerRef: ElementRef;
 
-  public faPhone = faPhone;
-
   public navbarTitle = "Kontakt";
   public pendingNavbarTitle = "";
   public navbarTitleBlurred = false;
+
   public hamburgerClicked = false;
   public currentSection: NavItem;
   
@@ -87,11 +86,8 @@ export class NavbarComponent implements OnInit {
   public onHamburgerClick() {
     if (!this.hamburgerClicked) {
       window.document.documentElement.style.overflowY = "hidden";
-      // this.updateCurrentSection();
-      // (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "blur(1rem) saturate(0%)"
     } else {
       window.document.documentElement.style.overflowY = "unset";
-      // (this.currentSection.elementTarget.firstChild as HTMLElement).style.filter = "unset"
     }
 
     this.hamburgerClicked = !this.hamburgerClicked;
@@ -118,7 +114,7 @@ export class NavbarComponent implements OnInit {
 
     this.currentSection = this.config[0];
     this.config.slice().reverse().every(navBreakpoint => { 
-      if (currentScroll > navBreakpoint.offsetTarget()) {
+      if (currentScroll >= navBreakpoint.offsetTarget()) {
         this.currentSection = navBreakpoint;
         this.targetReached.emit(this.currentSection);
         return false;

@@ -8,52 +8,38 @@
   
   font-size: 2rem;
   color: white;
-  // transition: background-color 1s;
 
-  // background-color: rgba($color: #000000, $alpha: 0.2);
-
+  background-color: white;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  
   &__logo {
     color: $primary-color;
     letter-spacing: 1px;
     transition: opacity 0.5s;
   }
 
-  &--hamburger-open &__logo{
+  &__hamburger {
+    width:  4rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__hamburger-stick {
+    height: 0.2rem;
+    background-color: $primary-color;
+    transition: all 0.4s;
+  }
+
+  &__hamburger-stick:nth-of-type(2) {
+    width: 100%;
+    position: absolute;
+    top: 0.9rem;
+    left: 0;
     opacity: 0;
-  }
-
-  &--hamburger-open &__hamburger-stick {
-    background-color: white;
-  }
-
-  &--hamburger-open &__hamburger-stick:nth-of-type(1) {
-    transform: translateY(1.8rem) scale(0.5);
-    opacity: 0;
-  }
-  &--hamburger-open &__hamburger-stick:nth-of-type(2) {
-    transform: rotateZ(45deg);
-    opacity: 1;
-  }
-  &--hamburger-open &__hamburger-stick:nth-of-type(3) {
-    transform: rotateZ(-45deg);
-    opacity: 1;
-  }
-  &--hamburger-open &__hamburger-stick:nth-of-type(4) {
-    transform: translateY(0.2rem) scale(0.5);
-    opacity: 0;
-  }
-
-  &--hamburger-open &__links {
-    visibility: visible;
-    opacity: 1;
-    color: white;
-    background-color: rgba(72, 153, 223, 0.6);
-
-    backdrop-filter: blur(1rem) saturate(0%);
-
-    li {
-      opacity: 1;
-    }
   }
 
   &__links {
@@ -81,73 +67,76 @@
     font-size: 3rem;
     letter-spacing: 1px;
     font-weight: lighter;
-    // background-color: rgb(72, 153, 223);
-    // background-color: rgba(72, 153, 223, 0.8);
     background-color: transparent;
     color: transparent;
 
-    // transition: opacity 0.5s, visibility 0.5s, backdrop-filter 1s;
     transition: backdrop-filter 1s, opacity 1s, visibility 1s;
 
     li {
       opacity: 0;
       padding: 2rem;
-    }
 
-    li:hover {
-      cursor: pointer;
-      text-shadow: 0px 0px 5px black;
-    }
+      &:hover {
+        cursor: pointer;
+        text-shadow: 0px 0px 5px black;
+      }
 
-    li:active {
-      background-color: rgba(255, 255, 255, 0.2);
+      &:active {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
     }
   }
 
-  &__hamburger {
-    width:  4rem;
-    height: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    cursor: pointer;
-  }
+  &--hamburger-open {
+    .navbar {
+      background-color: unset;
+      box-shadow: unset;
 
-  &__hamburger-stick {
-    height: 0.2rem;
-    // background-color: white;
-    background-color: $primary-color;
-    transition: all 0.4s;
-  }
+      &__logo{
+        opacity: 0;
+      }
 
-  &__hamburger-stick:nth-of-type(2) {
-    width: 100%;
-    position: absolute;
-    top: 0.9rem;
-    left: 0;
-    opacity: 0;
+      &__hamburger-stick {
+        background-color: white;
+      }
+      &__hamburger-stick:nth-of-type(1) {
+        transform: translateY(1.8rem) scale(0.5);
+        opacity: 0;
+      }
+      &__hamburger-stick:nth-of-type(2) {
+        transform: rotateZ(45deg);
+        opacity: 1;
+      }
+      &__hamburger-stick:nth-of-type(3) {
+        transform: rotateZ(-45deg);
+        opacity: 1;
+      }
+      &__hamburger-stick:nth-of-type(4) {
+        transform: translateY(0.2rem) scale(0.5);
+        opacity: 0;
+      }
+
+      &__links {
+        visibility: visible;
+        opacity: 1;
+        color: white;
+        background-color: rgba(72, 153, 223, 0.6);
+    
+        backdrop-filter: blur(1rem) saturate(0%);
+    
+        li {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
-
-.navbar.navbar--mobile-background {
-  background-color: white;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-
-.navbar.navbar--mobile-background.navbar--hamburger-open {
-  background-color: unset;
-  box-shadow: unset;
-}
-
-// .navbar.navbar--hamburger-open {
-//   li {
-//     opacity: 1;
-//   }
-// }
 
 @media screen and (min-width: 768px) {
   .navbar {   
+    background-color: unset;
+    box-shadow: unset;
+
     &__hamburger {
       display: none;
     }
@@ -193,11 +182,6 @@
     &__logo {
       display: none;
     }
-  }
-
-  .navbar.navbar--mobile-background {
-    background-color: unset;
-    box-shadow: unset
   }
 }
 

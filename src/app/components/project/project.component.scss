@@ -6,24 +6,18 @@ mat-card {
 }
 
 .project {
-  // width:  100%;
-  // height: 60rem;
   height: 100%;
   display: flex;
   flex-direction: column;
-  // border: 1px solid white;
-  // border-radius: 2rem;
   background-color: white;
   color: black;
   overflow: visible;
-  // background-color: rgba(23, 54, 81, 0.5);
 
   &__img-container {
     // keep 1.46 aspect ratio
     width: 100%;
     height: 0;
     padding-bottom: 68%;
-    // height: 30rem;
     position: relative;
     transition: transform 0.5s, backdrop-filter 0.5s;
   }
@@ -47,9 +41,7 @@ mat-card {
     visibility: hidden;
     animation-name: switchVisibility;
     animation-duration: 1s;
-    // animation-delay: 2s;
     animation-fill-mode: forwards;
-    // transition: none;
 
     .project {
       &__img {
@@ -58,13 +50,7 @@ mat-card {
         width: calc((100vh - 20rem) * 1.46);
         height: calc(100% - 20rem);
         margin: 0;
-        // margin: 10rem 0;
 
-        // left: 0;
-        // width:  calc(100% - 20rem);
-        
-        // padding: 10rem;
-        // margin: 0 10rem;
         clip-path: polygon(-3.43% -4.47%, 0% -11.86%, -2.05% 107.33%, 0% 102.33%);
         animation-name: swipeRight;
         object-fit: contain;
@@ -85,11 +71,9 @@ mat-card {
       &__expand {
         opacity: 1;
         top: 2rem;
-        // right: 2rem;
         right: calc(50% - 9.3rem - calc((100vh - 20rem) * 1.46)/2);
         font-size: 4rem;
         color: rgb(255, 63, 63);
-        // transition: color 0.5s;
 
         &:hover {
           color: $primary-color;
@@ -209,15 +193,12 @@ mat-card {
     width: 100%;
     height: 100%;
     position: absolute;
-    // border-radius: 2rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom: 1px solid white;
     object-fit: cover;
     cursor: pointer;
     opacity: 0;
-    // z-index: -1;
-    // transition: border-radius 0.5s, opacity 0.3s ease-out;
     transition: border-radius 0.5s, opacity 0.5s ease-out, filter 0.8s ease-in-out, box-shadow 0.5s;
     filter: saturate(0%);
   }
@@ -237,7 +218,6 @@ mat-card {
 
   &__img--current {
     z-index: 99;
-    // animation-name: swipeRight;
   }
 
   &__img--previous {
@@ -259,7 +239,6 @@ mat-card {
   }
 
   &__desc {    
-    // border-top: 1px dotted white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -282,9 +261,6 @@ mat-card {
   }
 
   &__github {
-    // position: absolute;
-    // right:  2rem;
-    // bottom: 2rem;
     height: 3.5rem;
     margin-left: auto;
     line-height: 1;
@@ -293,9 +269,6 @@ mat-card {
   }
 
   &__try {
-    // position: absolute;
-    // bottom: 2rem;
-    // left: 2rem;
     border: 1px solid black;
     transition: background-color 0.5s, color 0.5s;
   }
@@ -329,7 +302,6 @@ mat-card {
       transform: scale(1.1);
     
       .project__img {
-        // object-fit: contain;
         border-radius: 2rem;
       }
 

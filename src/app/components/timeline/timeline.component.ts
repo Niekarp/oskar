@@ -31,7 +31,6 @@ export class TimelineComponent implements OnInit {
       this.progressHappened.emit(this.progress);
 
       (this.lineDate.nativeElement as HTMLElement).style.transform = `scaleY(${1/Math.abs((100 - this.progress) / 100)})`; 
-      // (this.lineDate.nativeElement as HTMLElement).scrollIntoView({behavior: "smooth", block: "center"},);
 
       if (this.progress < 92) {
         this.year = 2011 + Math.floor(this.timespan * (this.progress / 100));
@@ -41,7 +40,6 @@ export class TimelineComponent implements OnInit {
 
       if (this.progress > 100) {
         clearInterval(timelineUpadateInterval);
-        // this.progress = 0;
       }
     }, 200);
   }

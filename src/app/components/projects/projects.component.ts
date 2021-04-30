@@ -14,7 +14,6 @@ export class ProjectsComponent implements OnInit {
   constructor(elRef: ElementRef) {
     this.elRef = elRef;
 
-    // use capital letters for titles
     this.projects = [
       {
         imgSrc: [
@@ -39,7 +38,7 @@ export class ProjectsComponent implements OnInit {
         try: "google.pl"
       },
       {
-        title: "Oskar",
+        title: "OSKAR",
         imgSrc: [
           "./assets/oskar-1.png",
           "./assets/oskar-2.png",
@@ -50,7 +49,7 @@ export class ProjectsComponent implements OnInit {
       },
       {
         imgIdx: 0,
-        title: "Julik",
+        title: "JULIK",
         imgSrc: [
           "./assets/julik-1.png",
           "./assets/julik-2.png",
@@ -69,7 +68,7 @@ export class ProjectsComponent implements OnInit {
         try: "google.pl"
       },
       {
-        title: "Ankiety",
+        title: "ANKIETY",
         imgSrc: [
           "./assets/ankiety-1.png",
           "./assets/ankiety-2.png",
@@ -103,7 +102,7 @@ export class ProjectsComponent implements OnInit {
         Pelni takze funkcje portalu do oceny i zdobycia informacji o produktach.`
       },
       {
-        title: "Football",
+        title: "FOOTBALL",
         imgIdx: 0,
         imgSrc: ["./assets/football-1.png", "./assets/football-2.png"],
         tech: Tech.React,
@@ -112,7 +111,7 @@ export class ProjectsComponent implements OnInit {
         Przewiduje ona szanse wygranej kazdej z druzyn.`,
       },
       {
-        title: "Paznokieć",
+        title: "PAZNOKIEC",
         imgSrc: [
           "./assets/nail-1.png"
         ],
@@ -122,7 +121,7 @@ export class ProjectsComponent implements OnInit {
         `Strona salonu pieknosci z Warszawy. Dotyczy kursu stylizacji paznokci.`,
       },
       {
-        title: "Phaser game",
+        title: "PHASER GAME",
         imgSrc: [
           "./assets/game-1.jpg",
           "./assets/game-2.jpg",

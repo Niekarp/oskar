@@ -1,10 +1,10 @@
 @import "colors.scss";
 
 :host.off {
-  background-color: rgb(23, 54, 81);
+  background-color: $primary-color-dark;
 
   .staff__hider {
-    background-color: rgb(23, 54, 81);
+    background-color: $primary-color-dark;
   }
 }
 
@@ -16,20 +16,14 @@
   font-size: 4rem;
   text-align: center;
   color: black;
-  // color: red;
 
   &__music {
     position: relative;
-    // padding-top: 30%;
-    // background-image: url("/assets/cycling-1.jpg");
-    // background-color: #4899df;
-    // background: linear-gradient(180deg, #0a5491 0%, #4899df 100%);
     background-position: center;
     object-fit: cover;
   }
 
   &__music-title {
-    // margin-top: 2rem;
     margin: 7rem 0 2rem 0;
     text-shadow: -2px 0px 1px black, 0px 2px 1px black, 2px 0px 1px black, 0px -2px 1px black;
     color: white;
@@ -45,8 +39,6 @@
   }
 
   &__lower-image {
-    // width: 58rem;
-    // max-height: 100%;
     width: 43rem;
     height: 30rem;
     
@@ -55,7 +47,6 @@
     top: -5rem;
     left: -28rem;
     bottom: 0;
-    // transform: rotateZ(-45deg) translateX(-2rem);
     
     z-index: 999;
     
@@ -71,8 +62,6 @@
     align-items: center;
     text-align: left;
     margin: 0 2rem;
-    // margin-top: -1rem;
-    // margin-bottom: -0.5rem;
     background-color: rgba(0,0,0, 0.1);
     position: relative;
     z-index: 200;
@@ -80,11 +69,7 @@
 
   &__composing {
     font-size: 1.8rem;
-    // border: 2px solid black;
-    // padding: 0.5rem;
     border-radius: 0 1rem 1rem 0;
-    // border-left: 12px dotted black;
-    // margin-left: 2rem;
     font-weight: lighter;
   }
 
@@ -104,10 +89,6 @@
     color: #4899df;
   }
 
-  &__composing:hover {
-    // background-color: #2d5c86; 
-  }
-
   &__violin-wrapper {
     display: flex;
     justify-content: center;
@@ -120,7 +101,6 @@
 
   &__violin {
     font-size: 5rem;
-    // border: 2px solid black;
     padding: 0.5rem;
     border-radius: 1rem 0rem 0rem 1rem;
     border-right: 0;
@@ -133,7 +113,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    // background-color: rgb(35, 69, 99);
     object-fit: cover;
     color: #4899df;
   }
@@ -143,10 +122,7 @@
     position: relative;
     text-align: left;
     text-shadow: -2px 0px 1px black, 0px 2px 1px black, 2px 0px 1px black, 0px -2px 1px black;
-    // padding-left: 2rem;
     margin-top: 0;
-    // padding-right: 2rem;
-    // margin-bottom: 22rem;
   }
 
   &__bike-fotter {
@@ -168,7 +144,6 @@
     width: 100%;
     left: 0;
     z-index: 0;
-    // border-top: 1rem #4899de dashed;
     height: 45rem;
     overflow: hidden;
   }
@@ -182,7 +157,6 @@
     justify-content: space-evenly;
     position: relative;
     margin: 0 2rem;
-    // overflow: hidden;
   }
 
   &__line {
@@ -202,7 +176,6 @@
   }
 
   &__note-wrapper--moving {
-    // transform: translateX(2 * -80%);
     animation-name: moving-low;
     animation-duration: 22s;
     animation-delay: 2s;
@@ -221,18 +194,9 @@
     left: 10%;
     border-radius: 4px;
     z-index: 1;
-    // transition: background-color 0.2s;
-  }
-
-  &__note--treble {
-  }
-
-  &__note--bass {
-
   }
 
   &__note--playing {
-    // background-color: #8cc5f5;
     animation-name: noteJump;
     animation-duration: 0.5s;
     animation-timing-function: ease-out;
@@ -241,17 +205,14 @@
 
   &__note--quarter-up {
     background-image: url("~/assets/quarter-note-up.png");
-    // transform: translateY(-73%)
   }
 
   &__note--quarter-down {
     background-image: url("~/assets/quarter-note-down.png");
-    // top: 100%;
   }
 
   &__note--half-up {
     background-image: url("~/assets/half-note-up.png");
-    // transform: translateY(-72%);
   }
 
   &__note--half-down {
@@ -392,7 +353,6 @@
     }
 
     &__note-wrapper--moving {
-      // transform: translateX(2 * -80%);
       animation-name: moving-mid;
       animation-duration: 18s;
       animation-delay: 5s;
@@ -426,10 +386,6 @@
     &__violin-wrapper {
       margin-top: 1rem;
     }
-    
-    &__bike-title {
-      // padding-left: 12rem;
-    }
 
     &__svg {
       height: 60rem;
@@ -437,7 +393,6 @@
 
     &__bike-fotter {
       font-size: 2.7rem;
-      // border-radius: 20% 20% 00% 0;
     }
 
     &__upper-image {
