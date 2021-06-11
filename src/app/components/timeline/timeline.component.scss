@@ -12,7 +12,7 @@
   color: black;
 
   &__line-container {
-    height: 130rem;
+    height: 200rem;
     grid-column: 1;
     margin-right: 0;
     margin-top: 0;
@@ -180,6 +180,22 @@
   }
 }
 
+@media screen and (min-width: $mobile-breakpoint + 100) {
+  .timeline {
+    &__line-container {
+      height: 150rem;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop-normal-breakpoint - 100) {
+  .timeline {
+    &__line-container {
+      height: 130rem;
+    }
+  }
+}
+
 @media screen and (min-width: $desktop-small-breakpoint) {
   .timeline {
     grid-template-columns: 15% 85%;
@@ -194,6 +210,10 @@
 
     &__list {
       font-size: 2.4rem;
+    }
+    
+    &__inner-list {
+      margin-top: 1.5rem;
     }
 
     &__line::before {

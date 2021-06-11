@@ -43,8 +43,8 @@
   <div class="project__desc">
     {{ project.desc }}
     <div class="project__links">
-      <a *ngIf="project.try" mat-stroked-button href="https://www.google.com/" target="_blank" class="project__try">WYPRÓBUJ</a>
-      <a href="https://github.com/Niekarp" target="_blank" class="project__github"><fa-icon [icon]="faGithub"></fa-icon></a>
+      <a *ngIf="project.try" mat-stroked-button [href]="project.try" target="_blank" class="project__try">WYPRÓBUJ</a>
+      <a *ngIf="project.git" [href]="project.git" target="_blank" class="project__github"><fa-icon [icon]="faGithub"></fa-icon></a>
     </div>
   </div>
 </mat-card>

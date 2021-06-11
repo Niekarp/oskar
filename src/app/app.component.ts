@@ -53,7 +53,7 @@ export class AppComponent {
         icon: faAddressCard 
       },
       { 
-        navName: "Doświadzenie",
+        navName: "Doświadczenie",
         offsetTarget: experienceOffsetTarget,
         elementTarget: this.cmpExperience.elRef.nativeElement,
         icon: faSchool
@@ -90,7 +90,7 @@ export class AppComponent {
 
   public startTimeline(navItem: NavItem) {
     // make timeline moving when doswiadczenie section is visited the first time
-    if (navItem.navName === "Doświadzenie" && !this.timelineOn) {
+    if (navItem.navName === "Doświadczenie" && !this.timelineOn) {
       this.timelineOn = true;
       this.cmpExperience.startTimeline();
     }

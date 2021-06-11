@@ -33,19 +33,32 @@ export class ProjectsComponent implements OnInit {
         tech: Tech.Angular,
         desc: 
         `Internetowy test klasyfikacji scen akustycznych. 
-        Uczestnicy podejmują decyzje sluchajac nagran binauralnych.
-        Wykorzystany do zebrania probek w miedzynarodowym badaniu.`,
-        try: "google.pl"
+        Uczestnicy podejmują decyzje po odsłuchu nagrań binauralnych.
+        Wykorzystany do zebrania próbek w międzynarodowym badaniu.`,
+        try: "http://audio.wi.pb.edu.pl",
+        git: "https://github.com/Niekarp/binpoll-front-triple-stimulus"
       },
       {
-        title: "OSKAR",
+        title: "WIZYTÓWKA",
         imgSrc: [
           "./assets/oskar-1.png",
           "./assets/oskar-2.png",
         ],
         imgIdx: 0,
         tech: Tech.Angular,
-        desc: "Strona na ktorej wlasnie sie znajdujesz. Moja internetowa wizytowka.",
+        desc: "Strona na której właśnie się znajdujesz. Moja internetowa wizytówka.",
+      },
+      {
+        title: "NAILACADEMY",
+        imgSrc: [
+          "./assets/nail-1.png"
+        ],
+        imgIdx: 0,
+        tech: Tech.Wordpress,
+        desc: 
+        `Szkoleniowa strona warszawskiego salonu manicure & pedicure. 
+        Dotyczy oferty profesjonalnego kursu stylizacji paznokci.`,
+        try: "http://nailacademy.pl"
       },
       {
         imgIdx: 0,
@@ -64,8 +77,10 @@ export class ProjectsComponent implements OnInit {
         ],
         tech: Tech.Vue,
         desc: 
-        `Strona internetowa o psie Juliku. Zawiera ukryty katalog utworów muzycznych.`,
-        try: "google.pl"
+        `Strona internetowa o psieku Juliku. 
+        Oferuje wybór psiego awatara, motywy kolorystyczne i zawiera ukryty katalog utworów muzycznych.`,
+        try: "http://www.oskardadan.pl/julik/",
+        git: "https://github.com/Niekarp/julik"
       },
       {
         title: "ANKIETY",
@@ -81,8 +96,10 @@ export class ProjectsComponent implements OnInit {
         imgIdx: 0,
         tech: Tech.Angular,
         desc:
-        `Platforma do przygotowywania, wypelniania i wyszukiwania ankiet internetowych. 
-        Zawiera kreator ankiety obslugujacy kilka rodzajow pytan, w tym pytania warunkowe.`,
+        `Platforma do przygotowywania, wypełniania i wyszukiwania ankiet internetowych. 
+        Zawiera rozbudowany kreator ankiety obsługujacy kilka rodzajów pytań, w tym pytania warunkowe.`,
+        try: "http://oskardadan.pl/ankiety/",
+        git: "https://github.com/Niekarp/ankiety-frontend"
       },
       {
         title: "SOPS",
@@ -98,27 +115,9 @@ export class ProjectsComponent implements OnInit {
         imgIdx: 0,
         tech: Tech.Angular,
         desc: 
-        `Platforma do rejestracji i generowania kodow QR produktow sporzywczych. 
-        Pelni takze funkcje portalu do oceny i zdobycia informacji o produktach.`
-      },
-      {
-        title: "FOOTBALL",
-        imgIdx: 0,
-        imgSrc: ["./assets/football-1.png", "./assets/football-2.png"],
-        tech: Tech.React,
-        desc:
-        `Aplikacja pokazujaca na biezaco statystyki meczu pilkarskiego. 
-        Przewiduje ona szanse wygranej kazdej z druzyn.`,
-      },
-      {
-        title: "PAZNOKIEC",
-        imgSrc: [
-          "./assets/nail-1.png"
-        ],
-        imgIdx: 0,
-        tech: Tech.Wordpress,
-        desc: 
-        `Strona salonu pieknosci z Warszawy. Dotyczy kursu stylizacji paznokci.`,
+        `Platforma do rejestracji i generowania kodów QR produktów spożywczych. 
+        Pełni także funkcję portalu do oceny i zdobycia informacji o produktach.`,
+        git: "https://github.com/Niekarp/sops-front"
       },
       {
         title: "PHASER GAME",
@@ -136,8 +135,20 @@ export class ProjectsComponent implements OnInit {
         imgIdx: 0,
         tech: Tech.Phaser ,
         desc: 
-        `Przegladarkowa gra w korej celem jest zakrecenie hydrantow zanim woda zaleje akwarium. 
-        Poza woda zagrozneiem sa osmiornice i wszechobecna ciemnosc.`
+        `Przeglądarkowa gra w kórej celem jest zakręcenie hydrantów zanim woda zaleje akwarium. 
+        Poza woda zagrożneiem są ośmiornice i wszechobecna ciemność.`,
+        try: "http://oskardadan.pl/game/game/",
+        git: "https://github.com/Niekarp/Phaser-game"
+      },
+      {
+        title: "FOOTBALL",
+        imgIdx: 0,
+        imgSrc: ["./assets/football-1.png", "./assets/football-2.png"],
+        tech: Tech.React,
+        desc:
+        `Aplikacja pokazująca na bieżąco statystyki meczu piłkarskiego. 
+        Przewiduje ona szansę wygranej każdej z drużyn.`,
+        git: "https://github.com/Niekarp/football"
       },
     ];
   }

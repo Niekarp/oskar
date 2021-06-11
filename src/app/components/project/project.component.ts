@@ -16,7 +16,8 @@ export interface Project {
   title: string,
   tech: Tech,
   desc: string,
-  try?: string
+  try?: string,
+  git?: string,
 };
 
 @Component({
