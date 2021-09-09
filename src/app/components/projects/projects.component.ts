@@ -51,7 +51,14 @@ export class ProjectsComponent implements OnInit {
       {
         title: "NAILACADEMY",
         imgSrc: [
-          "./assets/nail-1.png"
+          "./assets/nail-1.png",
+          "./assets/nail-2.png",
+          "./assets/nail-3.png",
+          "./assets/nail-4.png",
+          "./assets/nail-5.png",
+          "./assets/nail-6.png",
+          "./assets/nail-7.png",
+          "./assets/nail-8.png"
         ],
         imgIdx: 0,
         tech: Tech.Wordpress,
