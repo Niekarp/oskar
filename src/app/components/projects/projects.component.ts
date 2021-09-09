@@ -47,6 +47,7 @@ export class ProjectsComponent implements OnInit {
         imgIdx: 0,
         tech: Tech.Angular,
         desc: "Strona na której właśnie się znajdujesz. Moja internetowa wizytówka.",
+        git: "https://github.com/Niekarp/oskar"
       },
       {
         title: "NAILACADEMY",
